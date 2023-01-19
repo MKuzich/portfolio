@@ -3,6 +3,7 @@ import { TextField } from '@mui/material';
 export const FormInput = ({ formik, name, label }) => {
   return (
     <TextField
+      multiline
       name={name}
       type="text"
       size="small"

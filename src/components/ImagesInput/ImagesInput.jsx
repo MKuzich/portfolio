@@ -32,7 +32,14 @@ export const ImagesInput = ({ formik }) => {
   ));
 
   return (
-    <Stack border={1} borderRadius={4} borderColor="custom.light" py={1} px={2}>
+    <Stack
+      border={1}
+      borderRadius={4}
+      borderColor="custom.light"
+      bgcolor="custom.lightSecondary"
+      py={1}
+      px={2}
+    >
       <Stack
         mb={1}
         border={1}

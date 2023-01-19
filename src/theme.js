@@ -16,6 +16,7 @@ export const theme = createTheme({
     },
     custom: {
       light: 'rgba(66, 66, 66, 0.3)',
+      lightSecondary: 'rgba(139, 195, 74, 0.3)',
     },
   },
   typography: {

@@ -5,7 +5,7 @@ import {
   Stack,
   Typography,
   TextField,
-  IconButton,
+  FormHelperText,
 } from '@mui/material';
 import { Form, Formik } from 'formik';
 import * as yup from 'yup';
@@ -29,7 +29,10 @@ const validationCreateSchema = yup.object({
     .min(30, 'Description should be of minimum 30 characters length')
     .required('Description is required'),
   tech: yup.array(yup.string().min(2)).required('Tech is required'),
-  poster: yup.object({ size: yup.number() }).required('Poster is required'),
+  poster: yup.mixed().test('fileSize', 'Post is required', value => {
+    if (!value.size) return false;
+    return true;
+  }),
   images: yup.array(yup.mixed()),
   frontLink: yup.string(),
   backLink: yup.string(),
@@ -42,12 +45,17 @@ const Admin = () => {
     name: '',
     description: '',
     tech: [''],
-    poster: { name: 'Waiting for upload...' },
+    poster: { name: 'Waiting for upload *.jpeg or *.png image...' },
     images: [],
     frontLink: '',
     backLink: '',
     deployedLink: '',
     creationDate: dayjs(new Date()),
+  };
+
+  const onFormSubmitHandler = (values, actions) => {
+    console.log(values);
+    actions.resetForm({ values: initialValues });
   };
 
   return (
@@ -60,9 +68,10 @@ const Admin = () => {
           <Formik
             initialValues={initialValues}
             validationSchema={validationCreateSchema}
+            onSubmit={onFormSubmitHandler}
           >
             {formik => (
-              <Form>
+              <Form onSubmit={formik.handleSubmit}>
                 <Stack gap={2} mb={5}>
                   <FormInput formik={formik} name="name" label="Name" />
                   <FormInput
@@ -71,30 +80,41 @@ const Admin = () => {
                     label="Description"
                   />
                   <TechInput formik={formik} />
-                  <Stack direction="row" alignItems="center" gap={2}>
-                    <Typography>{formik.values.poster.name}</Typography>
-                    <input
-                      accept="image/*"
-                      style={{ display: 'none' }}
-                      id="raised-button-file"
-                      type="file"
-                      name="poster"
-                      onChange={event => {
-                        formik.setFieldValue(
-                          'poster',
-                          event.currentTarget.files[0]
-                        );
-                      }}
-                    />
-                    <label htmlFor="raised-button-file">
-                      <Button
-                        variant="outlined"
-                        component="span"
-                        startIcon={<FileUploadIcon />}
+                  <Stack>
+                    <Stack direction="row" alignItems="center" gap={2}>
+                      <Typography>{formik.values.poster.name}</Typography>
+                      <input
+                        accept="image/*"
+                        style={{ display: 'none' }}
+                        id="raised-button-file"
+                        type="file"
+                        name="poster"
+                        onChange={event => {
+                          formik.setFieldValue(
+                            'poster',
+                            event.currentTarget.files[0]
+                          );
+                        }}
+                      />
+                      <label htmlFor="raised-button-file">
+                        <Button
+                          variant="outlined"
+                          component="span"
+                          startIcon={<FileUploadIcon />}
+                        >
+                          poster
+                        </Button>
+                      </label>
+                    </Stack>
+                    {formik.touched.poster && Boolean(formik.errors.poster) && (
+                      <FormHelperText
+                        error={
+                          formik.touched.poster && Boolean(formik.errors.poster)
+                        }
                       >
-                        poster
-                      </Button>
-                    </label>
+                        Poster is required
+                      </FormHelperText>
+                    )}
                   </Stack>
                   <ImagesInput formik={formik} />
                   <FormInput
@@ -129,11 +149,7 @@ const Admin = () => {
                   </LocalizationProvider>
                 </Stack>
 
-                <Button
-                  type="submit"
-                  onClick={() => console.log(formik.values.poster)}
-                  variant="contained"
-                >
+                <Button type="submit" variant="contained">
                   Add project
                 </Button>
               </Form>
