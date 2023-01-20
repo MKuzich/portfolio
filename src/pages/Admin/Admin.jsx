@@ -1,160 +1,65 @@
-import {
-  Container,
-  Box,
-  Button,
-  Stack,
-  Typography,
-  TextField,
-  FormHelperText,
-} from '@mui/material';
-import { Form, Formik } from 'formik';
-import * as yup from 'yup';
-import dayjs from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import { FormInput } from 'components/FormInput/FormInput';
-import { TechInput } from 'components/TechInput/TechInput';
-import { ImagesInput } from 'components/ImagesInput/ImagesInput';
+import { Container, Box, Tabs, Tab } from '@mui/material';
+import { AddProjectForm } from 'components/AddProjectForm/AddProjectForm';
+import { useState } from 'react';
 
-const validationCreateSchema = yup.object({
-  name: yup
-    .string()
-    .min(3, 'Name should be of minimum 3 characters length')
-    .max(30, 'Name should be of maximum 30 characters length')
-    .required('Name is required'),
-  description: yup
-    .string()
-    .min(30, 'Description should be of minimum 30 characters length')
-    .required('Description is required'),
-  tech: yup.array(yup.string().min(2)).required('Tech is required'),
-  poster: yup.mixed().test('fileSize', 'Post is required', value => {
-    if (!value.size) return false;
-    return true;
-  }),
-  images: yup.array(yup.mixed()),
-  frontLink: yup.string(),
-  backLink: yup.string(),
-  deployedLink: yup.string().required('Deployed link is required'),
-  creationDate: yup.date().required('Date of project create is required'),
-});
+function TabPanel({ children, value, index, ...other }) {
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`vertical-tabpanel-${index}`}
+      aria-labelledby={`vertical-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ px: 5 }}>{children}</Box>}
+    </div>
+  );
+}
 
 const Admin = () => {
-  const initialValues = {
-    name: '',
-    description: '',
-    tech: [''],
-    poster: { name: 'Waiting for upload *.jpeg or *.png image...' },
-    images: [],
-    frontLink: '',
-    backLink: '',
-    deployedLink: '',
-    creationDate: dayjs(new Date()),
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
-  const onFormSubmitHandler = (values, actions) => {
-    console.log(values);
-    actions.resetForm({ values: initialValues });
-  };
-
+  function a11yProps(index) {
+    return {
+      id: `vertical-tab-${index}`,
+    };
+  }
   return (
     <section>
       <Container mt={20}>
-        <Box mx="auto" width={600}>
-          <Typography variant="h4" mb={3}>
-            Add project
-          </Typography>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationCreateSchema}
-            onSubmit={onFormSubmitHandler}
+        <Box
+          sx={{
+            flexGrow: 1,
+            bgcolor: 'background.paper',
+            display: 'flex',
+            height: 96,
+          }}
+        >
+          <Tabs
+            orientation="vertical"
+            // variant="scrollable"
+            textColor="secondary"
+            indicatorColor="secondary"
+            value={value}
+            onChange={handleChange}
+            sx={{
+              borderRight: 1,
+              borderColor: 'divider',
+            }}
           >
-            {formik => (
-              <Form onSubmit={formik.handleSubmit}>
-                <Stack gap={2} mb={5}>
-                  <FormInput formik={formik} name="name" label="Name" />
-                  <FormInput
-                    formik={formik}
-                    name="description"
-                    label="Description"
-                  />
-                  <TechInput formik={formik} />
-                  <Stack>
-                    <Stack direction="row" alignItems="center" gap={2}>
-                      <Typography>{formik.values.poster.name}</Typography>
-                      <input
-                        accept="image/*"
-                        style={{ display: 'none' }}
-                        id="raised-button-file"
-                        type="file"
-                        name="poster"
-                        onChange={event => {
-                          formik.setFieldValue(
-                            'poster',
-                            event.currentTarget.files[0]
-                          );
-                        }}
-                      />
-                      <label htmlFor="raised-button-file">
-                        <Button
-                          variant="outlined"
-                          component="span"
-                          startIcon={<FileUploadIcon />}
-                        >
-                          poster
-                        </Button>
-                      </label>
-                    </Stack>
-                    {formik.touched.poster && Boolean(formik.errors.poster) && (
-                      <FormHelperText
-                        error={
-                          formik.touched.poster && Boolean(formik.errors.poster)
-                        }
-                      >
-                        Poster is required
-                      </FormHelperText>
-                    )}
-                  </Stack>
-                  <ImagesInput formik={formik} />
-                  <FormInput
-                    formik={formik}
-                    name="frontLink"
-                    label="Front end repo link"
-                  />
-                  <FormInput
-                    formik={formik}
-                    name="backLink"
-                    label="Back end repo link"
-                  />
-                  <FormInput
-                    formik={formik}
-                    name="deployedLink"
-                    label="Deployed site link"
-                  />
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <Stack spacing={3}>
-                      <DesktopDatePicker
-                        label="Creation date"
-                        inputFormat="MM/DD/YYYY"
-                        onChange={value =>
-                          formik.setFieldValue('creationDate', value, true)
-                        }
-                        value={formik.values.creationDate}
-                        renderInput={params => (
-                          <TextField size="small" {...params} />
-                        )}
-                      />
-                    </Stack>
-                  </LocalizationProvider>
-                </Stack>
-
-                <Button type="submit" variant="contained">
-                  Add project
-                </Button>
-              </Form>
-            )}
-          </Formik>
+            <Tab label="Add project" {...a11yProps(0)} />
+            <Tab label="Item Two" {...a11yProps(1)} />
+          </Tabs>
+          <TabPanel value={value} index={0}>
+            <AddProjectForm />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            Item Two
+          </TabPanel>
         </Box>
       </Container>
     </section>
@@ -162,15 +67,3 @@ const Admin = () => {
 };
 
 export default Admin;
-
-// const projectMock = {
-//   name: 'Filmoteka',
-//   description:
-//     'Team project is about searching movies and creating watch-list. Pure JavaScript with custom solutions was used. Role: Team Lead.',
-//   tech: ['HTML', 'CSS', 'SASS', 'JavaScript', 'Parcel', 'GIT'],
-//   images: [],
-//   frontLink: 'https://github.com/MKuzich/filmoteka',
-//   backLink: null,
-//   deployedLink: 'https://mkuzich.github.io/filmoteka/',
-//   creationDate: '2022-07-27',
-// };

@@ -11,6 +11,7 @@ import {
   Toolbar,
   Tabs,
   Tab,
+  CircularProgress,
 } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
@@ -74,7 +75,23 @@ const SharedLayout = () => {
         </Container>
       </header>
       <main style={{ marginTop: '100px' }}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <Container>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: '100%',
+                  height: 500,
+                }}
+              >
+                <CircularProgress size={60} />
+              </Box>
+            </Container>
+          }
+        >
           <Outlet />
         </Suspense>
       </main>
