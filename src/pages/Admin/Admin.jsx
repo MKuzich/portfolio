@@ -1,33 +1,11 @@
 import { Container, Box, Tabs, Tab } from '@mui/material';
 import { AddProjectForm } from 'components/AddProjectForm/AddProjectForm';
-import { useState } from 'react';
-
-function TabPanel({ children, value, index, ...other }) {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ px: 5 }}>{children}</Box>}
-    </div>
-  );
-}
+import { TabPanel } from 'components/TabPanel/TabPanel';
+import { useTabPanel } from 'hooks/useTabPanel';
 
 const Admin = () => {
-  const [value, setValue] = useState(0);
+  const { value, handleChange, a11yProps } = useTabPanel();
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  function a11yProps(index) {
-    return {
-      id: `vertical-tab-${index}`,
-    };
-  }
   return (
     <section>
       <Container mt={20}>
@@ -41,7 +19,6 @@ const Admin = () => {
         >
           <Tabs
             orientation="vertical"
-            // variant="scrollable"
             textColor="secondary"
             indicatorColor="secondary"
             value={value}
