@@ -1,20 +1,10 @@
-import {
-  Container,
-  Box,
-  Tabs,
-  Tab,
-  Stack,
-  Button,
-  Typography,
-  Divider,
-} from '@mui/material';
+import { Container, Box, Tabs, Tab, Stack } from '@mui/material';
 import { TabPanel } from 'components/TabPanel/TabPanel';
 import { useTabPanel } from 'hooks/useTabPanel';
-import { education } from 'data/education';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { SummarySection } from 'components/SummarySection/SummarySection';
 import { ContactsSection } from 'components/ContactsSection/ContactsSection';
 import { TechSection } from 'components/TechSection/TechSection';
+import { EducationSection } from 'components/EducationSection/EducationSection';
 
 const Home = () => {
   const { value, handleChange, a11yProps } = useTabPanel();
@@ -46,9 +36,9 @@ const Home = () => {
             <Tab label="Contacts" {...a11yProps(1)} />
             <Tab label="Tech skills" {...a11yProps(2)} />
             <Tab label="Education" {...a11yProps(3)} />
-            <Tab label="Editional education" {...a11yProps(4)} />
+            <Tab label="Work expirience" {...a11yProps(4)} />
           </Tabs>
-          <Stack direction="column" gap={2}>
+          <Stack direction="column" gap={4}>
             <TabPanel value={value} index={0} oneRender={false}>
               <SummarySection />
             </TabPanel>
@@ -59,58 +49,10 @@ const Home = () => {
               <TechSection />
             </TabPanel>
             <TabPanel value={value} index={3} oneRender={false}>
-              <Stack direction="row">
-                <Typography
-                  letterSpacing="-3px"
-                  textAlign="end"
-                  fontSize="7rem"
-                  lineHeight={1}
-                  variant="h2"
-                  component="h2"
-                >
-                  Education
-                </Typography>
-                <Stack direction="row" gap={2} flexWrap="wrap">
-                  {education.map(
-                    ({ company, place, speciality, period, image }) => (
-                      <Box
-                        display="flex"
-                        width="100%"
-                        justifyContent="space-between"
-                        alignItems="start"
-                        key={company + speciality}
-                      >
-                        <Stack width="100%" gap={2}>
-                          <Typography variant="h3">{company}</Typography>
-                          <Divider />
-                          <Stack gap={0.5}>
-                            <Stack
-                              direction="row"
-                              gap={0.5}
-                              alignItems="center"
-                            >
-                              <Typography>{period}</Typography>
-                              <HiOutlineLocationMarker size="1rem" />
-                              <Typography>{place}</Typography>
-                            </Stack>
-                            <Typography variant="h4">{speciality}</Typography>
-                          </Stack>
-                        </Stack>
-                        <Button sx={{ width: '200px', flexShrink: 0 }}>
-                          <img
-                            src={image}
-                            alt={speciality}
-                            style={{ height: 'auto', width: '100%' }}
-                          />
-                        </Button>
-                      </Box>
-                    )
-                  )}
-                </Stack>
-              </Stack>
+              <EducationSection />
             </TabPanel>
             <TabPanel value={value} index={4} oneRender={false}>
-              Item Two
+              Work expirience
             </TabPanel>
           </Stack>
         </Box>

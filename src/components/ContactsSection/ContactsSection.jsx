@@ -17,6 +17,10 @@ export const ContactsSection = () => {
           lineHeight={1}
           variant="h2"
           component="h2"
+          sx={{
+            background:
+              'linear-gradient(to right, rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.01))',
+          }}
         >
           Contacts
         </Typography>

@@ -26,13 +26,14 @@ export const theme = createTheme({
     },
     body1: {
       fontFamily: 'Ubuntu',
-      fontSize: '1.25rem',
+      fontSize: '1.5rem',
       color: '#424242',
     },
     body2: {
       fontSize: '0.75rem',
       fontStyle: 'italic ',
     },
+    h1: { fontFamily: 'Ubuntu', fontWeight: 700, fontSize: '2.75rem' },
     h2: {
       fontFamily: 'Ubuntu',
       fontWeight: 700,
@@ -41,13 +42,11 @@ export const theme = createTheme({
       backgroundClip: 'text !important',
       WebkitBackgroundClip: 'text !important',
       color: 'transparent',
-      background:
-        'linear-gradient(to left, rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.01))',
     },
     h3: {
-      lineHeight: 0.8,
+      lineHeight: 1,
       fontFamily: 'Ubuntu',
-      fontSize: '2rem',
+      fontSize: '2.5rem',
       fontWeight: 700,
       color: '#5a9216',
     },
