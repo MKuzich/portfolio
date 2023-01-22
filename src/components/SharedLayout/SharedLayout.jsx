@@ -56,24 +56,23 @@ const SharedLayout = () => {
 
   return (
     <>
-      <header>
+      <AppBar>
         <Container>
-          <AppBar>
-            <Toolbar>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                indicatorColor="secondary"
-                textColor="inherit"
-                variant="fullWidth"
-              >
-                <Tab to="/" label="About me" component={Link} />
-                <Tab to="/projects" label="My projects" component={Link} />
-              </Tabs>
-            </Toolbar>
-          </AppBar>
+          <Toolbar>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="secondary"
+              textColor="inherit"
+              variant="fullWidth"
+            >
+              <Tab to="/" label="About me" component={Link} />
+              <Tab to="/projects" label="My projects" component={Link} />
+            </Tabs>
+          </Toolbar>
         </Container>
-      </header>
+      </AppBar>
+
       <main style={{ marginTop: '100px' }}>
         <Suspense
           fallback={
