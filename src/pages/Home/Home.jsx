@@ -17,7 +17,6 @@ const Home = () => {
             flexGrow: 1,
             bgcolor: 'background.paper',
             display: 'flex',
-            height: 400,
           }}
         >
           <Tabs
@@ -30,6 +29,9 @@ const Home = () => {
               borderRight: 1,
               borderColor: 'divider',
               flexShrink: 0,
+              position: 'sticky',
+              top: '100px',
+              height: 400,
             }}
           >
             <Tab label="Summary" {...a11yProps(0)} />
@@ -38,6 +40,7 @@ const Home = () => {
             <Tab label="Education" {...a11yProps(3)} />
             <Tab label="Work expirience" {...a11yProps(4)} />
           </Tabs>
+
           <Stack direction="column" gap={4}>
             <TabPanel value={value} index={0} oneRender={false}>
               <SummarySection />
