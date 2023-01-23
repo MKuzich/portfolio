@@ -1,9 +1,9 @@
-import { Box, Stack, Button, Typography } from '@mui/material';
-import { contacts } from 'data/contacts';
+import { Box, Stack, Typography, IconButton } from '@mui/material';
+import { webContacts, localContacts } from 'data/contacts';
 
 export const ContactsSection = () => {
   return (
-    <Stack direction="row">
+    <Stack direction="row" justifyContent="end" gap={0.5}>
       <Box
         display="flex"
         alignItems="center"
@@ -13,7 +13,7 @@ export const ContactsSection = () => {
         <Typography
           letterSpacing="-3px"
           textAlign="end"
-          fontSize="4rem"
+          fontSize="2.125rem"
           lineHeight={1}
           variant="h2"
           component="h2"
@@ -25,23 +25,27 @@ export const ContactsSection = () => {
           Contacts
         </Typography>
       </Box>
-      <ul>
-        {contacts.map(({ title, icon: Icon, link }) => (
-          <li key={title}>
-            <Button
-              component="a"
-              target="_blank"
-              href={link}
-              sx={{ textDecoration: 'none' }}
-            >
-              <Icon size="1.5rem" />
+      <Stack direction="row" gap={1}>
+        <Stack>
+          {localContacts.map(({ title, icon: Icon, link }) => (
+            <Stack key={title} direction="row" alignItems="center">
+              <IconButton component="a" target="_blank" href={link}>
+                <Icon size="1.75rem" />
+              </IconButton>
               <Typography sx={{ textTransform: 'none' }} ml={2}>
                 {title}
               </Typography>
-            </Button>
-          </li>
-        ))}
-      </ul>
+            </Stack>
+          ))}
+        </Stack>
+        <Stack direction="row" gap={0.5} flexWrap="wrap" width={132}>
+          {webContacts.map(({ title, icon: Icon, link }) => (
+            <IconButton key={title} component="a" target="_blank" href={link}>
+              <Icon size="3rem" />
+            </IconButton>
+          ))}
+        </Stack>
+      </Stack>
     </Stack>
   );
 };

@@ -2,7 +2,6 @@ import { Container, Box, Tabs, Tab, Stack } from '@mui/material';
 import { TabPanel } from 'components/TabPanel/TabPanel';
 import { useTabPanel } from 'hooks/useTabPanel';
 import { SummarySection } from 'components/SummarySection/SummarySection';
-import { ContactsSection } from 'components/ContactsSection/ContactsSection';
 import { TechSection } from 'components/TechSection/TechSection';
 import { EducationSection } from 'components/EducationSection/EducationSection';
 
@@ -34,11 +33,10 @@ const Home = () => {
               height: 400,
             }}
           >
-            <Tab label="Summary" {...a11yProps(0)} />
-            <Tab label="Contacts" {...a11yProps(1)} />
-            <Tab label="Tech skills" {...a11yProps(2)} />
-            <Tab label="Education" {...a11yProps(3)} />
-            <Tab label="Work expirience" {...a11yProps(4)} />
+            <Tab label="About me" {...a11yProps(0)} />
+            <Tab label="Tech skills" {...a11yProps(1)} />
+            <Tab label="Education" {...a11yProps(2)} />
+            <Tab label="Work expirience" {...a11yProps(3)} />
           </Tabs>
 
           <Stack direction="column" gap={4}>
@@ -46,15 +44,12 @@ const Home = () => {
               <SummarySection />
             </TabPanel>
             <TabPanel value={value} index={1} oneRender={false}>
-              <ContactsSection />
-            </TabPanel>
-            <TabPanel value={value} index={2} oneRender={false}>
               <TechSection />
             </TabPanel>
-            <TabPanel value={value} index={3} oneRender={false}>
+            <TabPanel value={value} index={2} oneRender={false}>
               <EducationSection />
             </TabPanel>
-            <TabPanel value={value} index={4} oneRender={false}>
+            <TabPanel value={value} index={3} oneRender={false}>
               Work expirience
             </TabPanel>
           </Stack>

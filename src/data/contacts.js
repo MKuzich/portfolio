@@ -7,19 +7,7 @@ import {
 import { BsTelegram } from 'react-icons/bs';
 import { SiDiscord } from 'react-icons/si';
 
-export const contacts = [
-  {
-    name: 'Phone number',
-    title: '+380951700468',
-    icon: HiOutlinePhone,
-    link: 'tel:+380951700468',
-  },
-  {
-    name: 'Email',
-    title: 'mykhailokuzich@gmail.com',
-    icon: HiOutlineMail,
-    link: 'mailto:mykhailokuzich@gmail.com',
-  },
+export const webContacts = [
   {
     name: 'LinkedIn',
     title: 'mykhailo-kuzich',
@@ -43,6 +31,21 @@ export const contacts = [
     title: 'MKuzich#0028',
     icon: SiDiscord,
     link: 'https://discordapp.com/users/676833820573433858',
+  },
+];
+
+export const localContacts = [
+  {
+    name: 'Phone number',
+    title: '+380951700468',
+    icon: HiOutlinePhone,
+    link: 'tel:+380951700468',
+  },
+  {
+    name: 'Email',
+    title: 'mykhailokuzich@gmail.com',
+    icon: HiOutlineMail,
+    link: 'mailto:mykhailokuzich@gmail.com',
   },
   {
     name: 'Location',

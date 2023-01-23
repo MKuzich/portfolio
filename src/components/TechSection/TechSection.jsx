@@ -28,7 +28,7 @@ export const TechSection = () => {
       </Stack>
       <Box
         display="flex"
-        alignItems="start"
+        alignItems="end"
         justifyContent="start"
         color="transparent"
       >
