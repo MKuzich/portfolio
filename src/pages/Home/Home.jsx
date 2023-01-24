@@ -40,7 +40,7 @@ const Home = () => {
             <Tab label="Work expirience" {...a11yProps(3)} />
           </Tabs>
 
-          <Stack direction="column" gap={4}>
+          <Stack direction="column" gap={10}>
             <TabPanel value={value} index={0} oneRender={false}>
               <SummarySection />
             </TabPanel>

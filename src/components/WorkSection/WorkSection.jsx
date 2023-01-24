@@ -6,7 +6,7 @@ import { TbPoint } from 'react-icons/tb';
 
 export const WorkSection = () => {
   return (
-    <Stack direction="row" gap={1}>
+    <Stack direction="row" gap={2}>
       <Typography
         letterSpacing="-3px"
         textAlign="end"
@@ -29,6 +29,11 @@ export const WorkSection = () => {
               width="100%"
               justifyContent="space-between"
               alignItems="start"
+              border={1}
+              borderColor="custom.light"
+              borderRadius={2}
+              px={2}
+              py={4}
               key={company + position}
             >
               <Stack width="100%">
@@ -50,7 +55,7 @@ export const WorkSection = () => {
                       'linear-gradient(to right, rgba(66, 66, 66, 0.5), transparent 90%)',
                   }}
                 />
-                <Stack gap={0.5}>
+                <Stack gap={1}>
                   <Stack direction="row" gap={0.5} alignItems="center">
                     <Typography mr={1}>
                       {from}

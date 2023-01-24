@@ -3,12 +3,12 @@ import { tech } from 'data/tech';
 
 export const TechSection = () => {
   return (
-    <Stack direction="row" gap={1}>
-      <Stack direction="row" gap={1} flexWrap="wrap" justifyContent="end">
+    <Stack direction="row" gap={2}>
+      <Stack direction="row" gap={2} flexWrap="wrap" justifyContent="end">
         {tech.map(({ title, icon: Icon }) => (
           <Box
             display="flex"
-            flexGrow={1}
+            // flexGrow={1}
             justifyContent="center"
             gap={1.5}
             alignItems="center"

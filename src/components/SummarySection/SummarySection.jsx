@@ -4,9 +4,9 @@ import { ContactsSection } from 'components/ContactsSection/ContactsSection';
 
 export const SummarySection = () => {
   return (
-    <Stack direction="row">
-      <Stack gap={1}>
-        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+    <Stack direction="row" gap={4}>
+      <Stack gap={1} p={2}>
+        <Typography textAlign="justify">
           Hi, my name is{' '}
           <span style={{ color: '#5a9216', fontWeight: 700 }}>
             Mykhailo Kuzich
@@ -15,23 +15,23 @@ export const SummarySection = () => {
           thinking, good in learning new technologies looking for a full-time
           position.
         </Typography>
-        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+        <Typography textAlign="justify">
           My native language - is Ukrainian, and my secondary - is English at an
           intermediate level.
         </Typography>
-        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+        <Typography textAlign="justify">
           I have vast experience in managing a big team, problem-solving, making
           important technical decisions,analyzing and working with large volumes
           of technical documentation, planning my workflow and the workflow for
           my team.
         </Typography>
-        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+        <Typography textAlign="justify">
           I focus on JavaScript, React.js and Node.js now.
         </Typography>
       </Stack>
-      <Stack gap={1}>
+      <Stack gap={2}>
         <Stack direction="row">
-          <Box position="relative" flexShrink={0}>
+          <Box position="relative">
             <img src={profile} width={500} alt="Mykhailo Kuzich" />
             <Box
               position="absolute"

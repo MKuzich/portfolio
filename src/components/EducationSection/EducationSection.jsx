@@ -1,13 +1,5 @@
 import { useState } from 'react';
-import {
-  Box,
-  Stack,
-  Button,
-  Typography,
-  AvatarGroup,
-  Avatar,
-  Modal,
-} from '@mui/material';
+import { Box, Stack, Button, Typography, Avatar, Modal } from '@mui/material';
 
 import { education } from 'data/education';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
@@ -22,11 +14,11 @@ export const EducationSection = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <Stack direction="column" alignItems="start" gap={2}>
-      <Stack direction="row" gap={1}>
+    <Stack direction="column" alignItems="start" gap={3}>
+      <Stack direction="row" gap={3}>
         <Typography
           letterSpacing="-3px"
-          textAlign="center"
+          textAlign="end"
           fontSize="6.25rem"
           lineHeight={1}
           variant="h2"
@@ -38,13 +30,18 @@ export const EducationSection = () => {
         >
           Education
         </Typography>
-        <Stack direction="row" gap={2} flexWrap="wrap">
-          {education.map(({ company, place, speciality, period }) => (
+        <Stack direction="row" gap={3} flexWrap="wrap">
+          {education.map(({ company, place, speciality, period, image }) => (
             <Box
               display="flex"
               width="100%"
               justifyContent="space-between"
               alignItems="start"
+              border={1}
+              borderColor="custom.light"
+              borderRadius={2}
+              px={2}
+              py={4}
               key={company + speciality}
             >
               <Stack width="100%">
@@ -68,25 +65,21 @@ export const EducationSection = () => {
                   <Typography variant="h4">{speciality}</Typography>
                 </Stack>
               </Stack>
+              <Button
+                key={'btn' + speciality}
+                onClick={() => handleOpen(image, speciality)}
+              >
+                <Avatar
+                  src={image}
+                  alt={speciality}
+                  variant="square"
+                  sx={{ width: '100%', height: 200 }}
+                />
+              </Button>
             </Box>
           ))}
         </Stack>
       </Stack>
-      <AvatarGroup max={3}>
-        {education.map(({ image, speciality }) => (
-          <Button
-            key={'btn' + speciality}
-            onClick={() => handleOpen(image, speciality)}
-          >
-            <Avatar
-              src={image}
-              alt={speciality}
-              variant="square"
-              sx={{ width: '100%', height: 230 }}
-            />
-          </Button>
-        ))}
-      </AvatarGroup>
       <Modal
         open={open}
         onClose={handleClose}
