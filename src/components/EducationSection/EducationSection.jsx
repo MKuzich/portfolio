@@ -23,11 +23,11 @@ export const EducationSection = () => {
 
   return (
     <Stack direction="column" alignItems="start" gap={2}>
-      <Stack direction="row">
+      <Stack direction="row" gap={1}>
         <Typography
           letterSpacing="-3px"
           textAlign="center"
-          fontSize="7rem"
+          fontSize="6.25rem"
           lineHeight={1}
           variant="h2"
           component="h2"

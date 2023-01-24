@@ -4,6 +4,7 @@ import { useTabPanel } from 'hooks/useTabPanel';
 import { SummarySection } from 'components/SummarySection/SummarySection';
 import { TechSection } from 'components/TechSection/TechSection';
 import { EducationSection } from 'components/EducationSection/EducationSection';
+import { WorkSection } from 'components/WorkSection/WorkSection';
 
 const Home = () => {
   const { value, handleChange, a11yProps } = useTabPanel();
@@ -50,7 +51,7 @@ const Home = () => {
               <EducationSection />
             </TabPanel>
             <TabPanel value={value} index={3} oneRender={false}>
-              Work expirience
+              <WorkSection />
             </TabPanel>
           </Stack>
         </Box>

@@ -5,17 +5,28 @@ import { ContactsSection } from 'components/ContactsSection/ContactsSection';
 export const SummarySection = () => {
   return (
     <Stack direction="row">
-      <Stack>
-        <Typography textAlign="justify" sx={{ textIndent: '20%' }}>
+      <Stack gap={1}>
+        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
           Hi, my name is{' '}
           <span style={{ color: '#5a9216', fontWeight: 700 }}>
             Mykhailo Kuzich
           </span>
           . I am an open-minded Full Stack developer with strong analytical
           thinking, good in learning new technologies looking for a full-time
-          position. I have vast experience in managing a big team,
-          problem-solving and making important technical decisions. I focus on
-          JS, React.js and Node.js now.
+          position.
+        </Typography>
+        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+          My native language - is Ukrainian, and my secondary - is English at an
+          intermediate level.
+        </Typography>
+        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+          I have vast experience in managing a big team, problem-solving, making
+          important technical decisions,analyzing and working with large volumes
+          of technical documentation, planning my workflow and the workflow for
+          my team.
+        </Typography>
+        <Typography textAlign="justify" sx={{ textIndent: '5%' }}>
+          I focus on JavaScript, React.js and Node.js now.
         </Typography>
       </Stack>
       <Stack gap={1}>

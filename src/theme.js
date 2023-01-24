@@ -46,7 +46,7 @@ export const theme = createTheme({
     h3: {
       lineHeight: 1,
       fontFamily: 'Ubuntu',
-      fontSize: '2.5rem',
+      fontSize: '2rem',
       fontWeight: 700,
       color: '#5a9216',
     },

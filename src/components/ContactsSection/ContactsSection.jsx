@@ -11,7 +11,7 @@ export const ContactsSection = () => {
         color="transparent"
       >
         <Typography
-          letterSpacing="-3px"
+          letterSpacing="-2px"
           textAlign="end"
           fontSize="2.125rem"
           lineHeight={1}
@@ -29,10 +29,18 @@ export const ContactsSection = () => {
         <Stack>
           {localContacts.map(({ title, icon: Icon, link }) => (
             <Stack key={title} direction="row" alignItems="center">
-              <IconButton component="a" target="_blank" href={link}>
+              <IconButton
+                sx={{
+                  '&': { transition: 'color 300ms' },
+                  '&:hover': { color: '#8bc34a' },
+                }}
+                component="a"
+                target="_blank"
+                href={link}
+              >
                 <Icon size="1.75rem" />
               </IconButton>
-              <Typography sx={{ textTransform: 'none' }} ml={2}>
+              <Typography sx={{ textTransform: 'none' }} ml={1}>
                 {title}
               </Typography>
             </Stack>
@@ -40,7 +48,16 @@ export const ContactsSection = () => {
         </Stack>
         <Stack direction="row" gap={0.5} flexWrap="wrap" width={132}>
           {webContacts.map(({ title, icon: Icon, link }) => (
-            <IconButton key={title} component="a" target="_blank" href={link}>
+            <IconButton
+              key={title}
+              sx={{
+                '&': { transition: 'color 300ms' },
+                '&:hover': { color: '#8bc34a' },
+              }}
+              component="a"
+              target="_blank"
+              href={link}
+            >
               <Icon size="3rem" />
             </IconButton>
           ))}
