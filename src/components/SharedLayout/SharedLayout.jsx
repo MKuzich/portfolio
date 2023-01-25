@@ -58,7 +58,7 @@ const SharedLayout = () => {
     <>
       <AppBar>
         <Container>
-          <Toolbar>
+          <Toolbar id="back-to-top-anchor">
             <Tabs
               value={value}
               onChange={handleChange}

@@ -39,7 +39,7 @@ export const EducationSection = () => {
               alignItems="start"
               border={1}
               borderColor="custom.light"
-              borderRadius={2}
+              borderRadius={3}
               px={2}
               py={4}
               key={company + speciality}

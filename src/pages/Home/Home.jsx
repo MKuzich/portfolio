@@ -1,62 +1,52 @@
-import { Container, Box, Tabs, Tab, Stack } from '@mui/material';
-import { TabPanel } from 'components/TabPanel/TabPanel';
-import { useTabPanel } from 'hooks/useTabPanel';
-import { SummarySection } from 'components/SummarySection/SummarySection';
-import { TechSection } from 'components/TechSection/TechSection';
-import { EducationSection } from 'components/EducationSection/EducationSection';
-import { WorkSection } from 'components/WorkSection/WorkSection';
+import { useState } from 'react';
+import { Box, Typography, Stack } from '@mui/material';
+
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const { value, handleChange, a11yProps } = useTabPanel();
+  const [selectedLink, setSelectedLink] = useState(0);
 
   return (
-    <section>
-      <Container>
-        <Box
-          sx={{
-            flexGrow: 1,
-            bgcolor: 'background.paper',
-            display: 'flex',
-          }}
-        >
-          <Tabs
-            orientation="vertical"
-            textColor="secondary"
-            indicatorColor="secondary"
-            value={value}
-            onChange={handleChange}
-            sx={{
-              borderRight: 1,
-              borderColor: 'divider',
-              flexShrink: 0,
-              position: 'sticky',
-              top: '100px',
-              height: 400,
-            }}
+    <Box height="100vh" width="100vw" py={14} px={30}>
+      <Stack>
+        <Box>
+          <Typography
+            component={Link}
+            variant="homeLink"
+            to="/about"
+            onMouseEnter={() => setSelectedLink(1)}
+            onMouseLeave={() => setSelectedLink(0)}
+            sx={{ '&:hover': { pl: 8 } }}
           >
-            <Tab label="About me" {...a11yProps(0)} />
-            <Tab label="Tech skills" {...a11yProps(1)} />
-            <Tab label="Education" {...a11yProps(2)} />
-            <Tab label="Work expirience" {...a11yProps(3)} />
-          </Tabs>
-
-          <Stack direction="column" gap={10}>
-            <TabPanel value={value} index={0} oneRender={false}>
-              <SummarySection />
-            </TabPanel>
-            <TabPanel value={value} index={1} oneRender={false}>
-              <TechSection />
-            </TabPanel>
-            <TabPanel value={value} index={2} oneRender={false}>
-              <EducationSection />
-            </TabPanel>
-            <TabPanel value={value} index={3} oneRender={false}>
-              <WorkSection />
-            </TabPanel>
-          </Stack>
+            {selectedLink === 1 ? 'About' : 'Hi!'}
+          </Typography>
         </Box>
-      </Container>
-    </section>
+        <Box>
+          <Typography
+            component={Link}
+            variant="homeLink"
+            to="/projects"
+            onMouseEnter={() => setSelectedLink(2)}
+            onMouseLeave={() => setSelectedLink(0)}
+            sx={{ '&:hover': { pl: 8 }, color: 'secondary.main' }}
+          >
+            {selectedLink === 2 ? 'Projects' : 'I am'}
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            component={Link}
+            variant="homeLink"
+            to="/contacts"
+            onMouseEnter={() => setSelectedLink(3)}
+            onMouseLeave={() => setSelectedLink(0)}
+            sx={{ '&:hover': { pl: 8 }, color: 'secondary.main' }}
+          >
+            {selectedLink === 3 ? 'Contacts' : 'Mykhailo'}
+          </Typography>
+        </Box>
+      </Stack>
+    </Box>
   );
 };
 export default Home;

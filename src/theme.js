@@ -3,9 +3,9 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      light: '#6d6d6d',
-      main: '#424242',
-      dark: '#1b1b1b',
+      light: '#484848',
+      main: '#212121',
+      dark: '#000000',
       contrastText: '#fff',
     },
     secondary: {
@@ -20,6 +20,14 @@ export const theme = createTheme({
     },
   },
   typography: {
+    homeLink: {
+      display: 'inline',
+      fontFamily: 'Ubuntu',
+      fontSize: '10rem',
+      fontWeight: 700,
+      lineHeight: 1,
+      color: '#fff',
+    },
     subtitle2: {
       fontSize: '1rem',
       fontWeight: 400,
@@ -57,3 +65,9 @@ export const theme = createTheme({
     },
   },
 });
+
+// font-family: 'Raleway', sans-serif; 400 700
+
+// font-family: 'Open Sans', sans-serif; 400 700 900
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Ubuntu', sans-serif;

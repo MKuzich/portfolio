@@ -7,20 +7,6 @@ import { TbPoint } from 'react-icons/tb';
 export const WorkSection = () => {
   return (
     <Stack direction="row" gap={2}>
-      <Typography
-        letterSpacing="-3px"
-        textAlign="end"
-        fontSize="7rem"
-        lineHeight={1}
-        variant="h2"
-        component="h2"
-        sx={{
-          background:
-            'linear-gradient(to right, rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.01))',
-        }}
-      >
-        Work experience
-      </Typography>
       <Stack direction="row" gap={2} flexWrap="wrap">
         {work.map(
           ({ position, company, from, to, location, responsibilities }) => (
@@ -31,7 +17,7 @@ export const WorkSection = () => {
               alignItems="start"
               border={1}
               borderColor="custom.light"
-              borderRadius={2}
+              borderRadius={3}
               px={2}
               py={4}
               key={company + position}
@@ -86,6 +72,20 @@ export const WorkSection = () => {
           )
         )}
       </Stack>
+      <Typography
+        letterSpacing="-3px"
+        textAlign="end"
+        fontSize="7rem"
+        lineHeight={1}
+        variant="h2"
+        component="h2"
+        sx={{
+          background:
+            'linear-gradient(to left, rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.01))',
+        }}
+      >
+        Work experience
+      </Typography>
     </Stack>
   );
 };
