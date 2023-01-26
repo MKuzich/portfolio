@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
+import { Container, Box, CircularProgress } from '@mui/material';
 
 import { GlobalStyle } from './GlobalStyle';
-import SharedLayout from './SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const About = lazy(() => import('../pages/About/About'));
@@ -13,12 +13,28 @@ export const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="admin" element={<Admin />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100vw',
+              height: '100vh',
+            }}
+          >
+            <CircularProgress color="secondary" size={80} />
+          </Box>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

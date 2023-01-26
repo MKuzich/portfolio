@@ -1,6 +1,16 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
+  breakpoints: {
+    values: {
+      xxs: 0,
+      xs: 420,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   palette: {
     primary: {
       light: '#484848',
@@ -20,14 +30,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    homeLink: {
-      display: 'inline',
-      fontFamily: 'Ubuntu',
-      fontSize: '10rem',
-      fontWeight: 700,
-      lineHeight: 1,
-      color: '#fff',
-    },
     subtitle2: {
       fontSize: '1rem',
       fontWeight: 400,
@@ -63,11 +65,18 @@ export const theme = createTheme({
       fontSize: '1.5rem',
       fontWeight: 700,
     },
+    homeLink: {
+      display: 'inline',
+      fontFamily: 'Ubuntu',
+      fontWeight: 700,
+      lineHeight: 1,
+      color: '#fff',
+    },
   },
 });
 
-// font-family: 'Raleway', sans-serif; 400 700
+// font-family: 'Ubuntu', sans-serif;400 700
 
 // font-family: 'Open Sans', sans-serif; 400 700 900
+// font-family: 'Raleway', sans-serif;
 // font-family: 'Roboto', sans-serif;
-// font-family: 'Ubuntu', sans-serif;

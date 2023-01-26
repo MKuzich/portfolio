@@ -1,6 +1,4 @@
 import { Stack, Typography, Box } from '@mui/material';
-import profile from '../../images/profile.jpg';
-import { ContactsSection } from 'components/ContactsSection/ContactsSection';
 
 export const SummarySection = () => {
   return (
@@ -31,19 +29,6 @@ export const SummarySection = () => {
       </Stack>
       <Stack gap={2}>
         <Stack direction="row">
-          <Box position="relative">
-            <img src={profile} width={500} alt="Mykhailo Kuzich" />
-            <Box
-              position="absolute"
-              width="100%"
-              height="100%"
-              top={0}
-              sx={{
-                background:
-                  'linear-gradient(to right, rgba(255, 255, 255) 0 2%, transparent 7% 80%, rgba(255, 255, 255) 100%)',
-              }}
-            ></Box>
-          </Box>
           <Box
             display="flex"
             alignItems="end"
@@ -67,7 +52,6 @@ export const SummarySection = () => {
             </Typography>
           </Box>
         </Stack>
-        <ContactsSection />
       </Stack>
     </Stack>
   );
