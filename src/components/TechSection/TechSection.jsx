@@ -1,62 +1,60 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Tooltip } from '@mui/material';
 import { tech } from 'data/tech';
 
 export const TechSection = () => {
   return (
-    <Stack direction="row" gap={2}>
-      <Stack direction="row" gap={2} flexWrap="wrap" justifyContent="end">
-        {tech.map(({ title, icon: Icon }) => (
-          <Box
-            display="flex"
-            // flexGrow={1}
-            justifyContent="center"
-            gap={1.5}
-            alignItems="center"
-            border={1}
-            borderRadius={2}
-            borderColor="custom.light"
-            bgcolor="custom.lightSecondary"
-            color="primary.main"
-            py={1}
-            px={1.5}
-            key={title}
+    <Stack ml={{ md: '20%' }} direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
+      <Stack direction="row" alignItems="center" gap={{ xxs: 1, lg: 2 }}>
+        <Stack flexShrink={0} direction="row" alignItems="end" gap={1}>
+          <Typography
+            fontSize={{
+              xxs: '20px',
+              xs: '22px',
+              md: '24px',
+              lg: '26px',
+            }}
+            variant="number"
           >
-            <Icon size="1.5rem" />
-            <Typography>{title}</Typography>
-          </Box>
+            02.
+          </Typography>
+          <Typography
+            flexShrink={0}
+            fontSize={{
+              xxs: '14px',
+              xs: '16px',
+              md: '18px',
+              lg: '20px',
+            }}
+            variant="title1"
+          >
+            Tech skills
+          </Typography>
+        </Stack>
+        <Box
+          sx={{
+            mt: 2,
+            mb: 1,
+            width: '100%',
+            height: '1px',
+            background: 'linear-gradient(to right, #484848, transparent 90%)',
+          }}
+        />
+      </Stack>
+      <Stack direction="row" gap={{ xxs: 3, md: 2, lg: 4 }} flexWrap="wrap">
+        {tech.map(({ title, icon: Icon }) => (
+          <Tooltip key={title} title={title} placement="top">
+            <Box
+              sx={{
+                color: '#fff',
+                '&': { transition: 'color 300ms' },
+                '&:hover': { color: '#8bc34a' },
+              }}
+            >
+              <Icon size="3.5rem" />
+            </Box>
+          </Tooltip>
         ))}
       </Stack>
-      <Box
-        display="flex"
-        alignItems="end"
-        justifyContent="start"
-        color="transparent"
-      >
-        <Typography
-          display="flex"
-          justifyContent="start"
-          textAlign="end"
-          letterSpacing="-7px"
-          fontSize="9rem"
-          lineHeight={0.8}
-          component="h2"
-          variant="h2"
-          sx={{
-            background:
-              'linear-gradient(to left, rgba(66, 66, 66, 0.5), rgba(66, 66, 66, 0.01))',
-          }}
-        >
-          Tech
-          <span
-            style={{
-              fontSize: '3rem',
-              letterSpacing: '-2px',
-            }}
-          >
-            skills
-          </span>
-        </Typography>
-      </Box>
     </Stack>
   );
 };

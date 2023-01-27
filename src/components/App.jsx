@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { Container, Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 
 import { GlobalStyle } from './GlobalStyle';
 

@@ -1,6 +1,18 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
+  components: {
+    MuiTabPanel: {
+      styleOverrides: {
+        root: {
+          '& .MuiBox-root': {
+            padding: '0px',
+            backgroundColor: 'red',
+          },
+        },
+      },
+    },
+  },
   breakpoints: {
     values: {
       xxs: 0,
@@ -36,8 +48,8 @@ export const theme = createTheme({
     },
     body1: {
       fontFamily: 'Ubuntu',
-      fontSize: '1.5rem',
-      color: '#424242',
+      fontSize: 'calc(0.75em + 0.75vmin)',
+      color: '#fff',
     },
     body2: {
       fontSize: '0.75rem',
@@ -46,19 +58,21 @@ export const theme = createTheme({
     h1: { fontFamily: 'Ubuntu', fontWeight: 700, fontSize: '2.75rem' },
     h2: {
       fontFamily: 'Ubuntu',
-      fontWeight: 700,
-      rotate: '180deg',
-      writingMode: 'vertical-rl',
-      backgroundClip: 'text !important',
-      WebkitBackgroundClip: 'text !important',
-      color: 'transparent',
+      fontWeight: 400,
+      letterSpacing: '2px',
+      fontSize: 'calc(1em + 1vmin)',
+      color: '#757575',
+      backgroundColor: '#212121',
+      padding: '0 0.5rem',
     },
     h3: {
-      lineHeight: 1,
+      lineHeight: 1.5,
       fontFamily: 'Ubuntu',
-      fontSize: '2rem',
+      fontSize: 'calc(1em + 1vmin)',
+      textAlign: 'center',
+      marginBottom: '1vw',
       fontWeight: 700,
-      color: '#5a9216',
+      color: '#fff',
     },
     h4: {
       fontFamily: 'Ubuntu',
@@ -67,6 +81,18 @@ export const theme = createTheme({
     },
     homeLink: {
       display: 'inline',
+      fontFamily: 'Ubuntu',
+      fontWeight: 700,
+      lineHeight: 1,
+      color: '#fff',
+    },
+    number: {
+      fontFamily: 'Raleway',
+      fontWeight: 800,
+      lineHeight: 1,
+      color: '#8bc34a',
+    },
+    title1: {
       fontFamily: 'Ubuntu',
       fontWeight: 700,
       lineHeight: 1,

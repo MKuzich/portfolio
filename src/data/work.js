@@ -34,15 +34,22 @@ export const work = [
     ],
   },
   {
-    position: 'Video-maker, civil engineer',
+    position: 'Civil engineer',
     company: 'Freelance',
     from: 'July 2015',
     to: 'July 2016',
-    location: 'Ukraine',
+    location: 'Remoute',
     responsibilities: [
-      'Creation of videos for a regular customer',
       'Performing engineering calculations and drawings for a regular customer',
     ],
+  },
+  {
+    position: 'Video-maker',
+    company: 'Freelance',
+    from: 'July 2015',
+    to: 'July 2016',
+    location: 'Remoute',
+    responsibilities: ['Creation of videos for a regular customer'],
   },
   {
     position: 'Support operator',

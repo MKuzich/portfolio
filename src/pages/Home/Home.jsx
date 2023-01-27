@@ -3,30 +3,7 @@ import { Box, Typography, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import portrait from '../../images/portrait.webp';
-
-const links = [
-  {
-    id: 1,
-    link: '/about',
-    primary: 'Hi!',
-    secondary: 'About',
-    color: '#fff',
-  },
-  {
-    id: 2,
-    link: '/projects',
-    primary: 'I am',
-    secondary: 'Projects',
-    color: 'secondary.main',
-  },
-  {
-    id: 3,
-    link: '/contacts',
-    primary: 'Mykhailo',
-    secondary: 'Contacts',
-    color: 'secondary.main',
-  },
-];
+import { links } from 'data/links';
 
 const Home = () => {
   const [selectedLink, setSelectedLink] = useState(0);
@@ -35,7 +12,7 @@ const Home = () => {
     <Box
       height="100vh"
       width="100vw"
-      px={{ xs: '2vw', sm: '5vw', md: '10vw', lg: '15vw', xl: '20vw' }}
+      px={{ xxs: '3vw', sm: '5vw', md: '10vw', lg: '15vw', xl: '20vw' }}
       display="flex"
       alignItems="center"
       position="relative"
