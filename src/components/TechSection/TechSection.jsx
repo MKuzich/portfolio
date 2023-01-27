@@ -1,7 +1,9 @@
-import { Box, Stack, Typography, Tooltip } from '@mui/material';
+import { Box, Stack, Typography, Tooltip, useMediaQuery } from '@mui/material';
 import { tech } from 'data/tech';
 
 export const TechSection = () => {
+  const isMd = useMediaQuery('(min-width:900px)');
+
   return (
     <Stack ml={{ md: '20%' }} direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
       <Stack direction="row" alignItems="center" gap={{ xxs: 1, lg: 2 }}>
@@ -40,7 +42,7 @@ export const TechSection = () => {
           }}
         />
       </Stack>
-      <Stack direction="row" gap={{ xxs: 3, md: 2, lg: 4 }} flexWrap="wrap">
+      <Stack direction="row" gap={{ xxs: 1, sm: 2, lg: 4 }} flexWrap="wrap">
         {tech.map(({ title, icon: Icon }) => (
           <Tooltip key={title} title={title} placement="top">
             <Box
@@ -50,7 +52,7 @@ export const TechSection = () => {
                 '&:hover': { color: '#8bc34a' },
               }}
             >
-              <Icon size="3.5rem" />
+              <Icon size={isMd ? '3.5rem' : '2.75rem'} />
             </Box>
           </Tooltip>
         ))}

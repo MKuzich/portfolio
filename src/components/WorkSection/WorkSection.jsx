@@ -17,7 +17,7 @@ import { TabPanel } from 'components/TabPanel/TabPanel';
 
 export const WorkSection = () => {
   const { value, handleChange, a11yProps } = useTabPanel();
-  const isMd = useMediaQuery('(min-width:900px)');
+  const isLg = useMediaQuery('(min-width:1200px)');
 
   return (
     <Stack ml={{ md: '20%' }} direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
@@ -61,23 +61,23 @@ export const WorkSection = () => {
         sx={{
           flexGrow: 1,
           display: 'flex',
-          flexDirection: { xxs: 'column', md: 'row' },
+          flexDirection: { xxs: 'column', lg: 'row' },
           height: 300,
         }}
       >
         <Tabs
-          orientation={isMd ? 'vertical' : 'horizontal'}
+          orientation={isLg ? 'vertical' : 'horizontal'}
           textColor="secondary"
-          variant={isMd ? 'standard' : 'scrollable'}
+          variant={isLg ? 'standard' : 'scrollable'}
           scrollButtons="auto"
           indicatorColor="secondary"
           value={value}
           onChange={handleChange}
           sx={{
             color: 'primary.light',
-            borderRight: { ssx: 0, md: 1 },
+            borderRight: { ssx: 0, lg: 1 },
             borderColor: 'primary.light',
-            width: { ssx: '100%', md: 180 },
+            width: { ssx: '100%', lg: 180 },
             flexShrink: 0,
           }}
         >
@@ -92,21 +92,19 @@ export const WorkSection = () => {
             />
           ))}
         </Tabs>
-        <Box width="100%" mt={{ xxs: 6, md: 0 }}>
+        <Box width="100%" mt={{ xxs: 6, lg: 0 }} px={{ xxs: 0, md: 5 }}>
           {work.map(
             (
               { position, company, from, to, location, responsibilities },
               idx
             ) => (
               <TabPanel
-                // sx={{
-                //   flexGrow: 1,
-                //   width: '100%',
-                //   '& .MuiBox-root': {
-                //     padding: '0px',
-                //     backgroundColor: 'red',
-                //   },
-                // }}
+                sx={{
+                  '& .MuiBox-root': {
+                    padding: '0px',
+                    backgroundColor: 'red',
+                  },
+                }}
                 key={'tabpanel' + idx}
                 value={value}
                 index={idx}
@@ -120,7 +118,7 @@ export const WorkSection = () => {
                   border={1}
                   borderColor="custom.light"
                   borderRadius={3}
-                  pt={5}
+                  pt={{ xxs: 2, sm: 3, md: 5 }}
                   px={3}
                   pb={3}
                 >

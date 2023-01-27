@@ -9,9 +9,14 @@ const About = () => {
     <section>
       <Container
         sx={{
-          py: {
+          pt: {
             xxs: '20vmin',
             xs: '15vmin',
+            lg: '18vmin',
+          },
+          pb: {
+            xxs: '40vmin',
+            sm: '20vmin',
             lg: '18vmin',
           },
           px: {

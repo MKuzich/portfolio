@@ -15,7 +15,7 @@ export const TabPanel = ({
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {(value === index || !oneRender) && <Box sx={{ px: 5 }}>{children}</Box>}
+      {(value === index || !oneRender) && <Box>{children}</Box>}
     </div>
   );
 };
