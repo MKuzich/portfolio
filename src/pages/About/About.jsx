@@ -3,10 +3,12 @@ import { SummarySection } from 'components/SummarySection/SummarySection';
 import { TechSection } from 'components/TechSection/TechSection';
 import { EducationSection } from 'components/EducationSection/EducationSection';
 import { WorkSection } from 'components/WorkSection/WorkSection';
+import { BackButton } from 'components/BackButton/BackButton';
 
 const About = () => {
   return (
     <section>
+      <BackButton />
       <Container
         sx={{
           pt: {
