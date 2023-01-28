@@ -1,7 +1,19 @@
-import { Stack, Typography, Box } from '@mui/material';
+import {
+  Stack,
+  Typography,
+  Box,
+  IconButton,
+  useMediaQuery,
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import { summary } from 'data/summary';
+import { localContacts } from 'data/contacts';
+import { TiContacts } from 'react-icons/ti';
 
 export const SummarySection = () => {
+  const isMd = useMediaQuery('(min-width:900px)');
+  const isSm = useMediaQuery('(min-width:600px)');
+
   return (
     <Stack direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
       <Stack direction="row" alignItems="center" gap={{ xxs: 1, lg: 2 }}>
@@ -57,6 +69,69 @@ export const SummarySection = () => {
             {par}
           </Typography>
         ))}
+        <Stack
+          direction={{ xxs: 'column', sm: 'row' }}
+          alignItems={{ xxs: 'end', sm: 'center' }}
+          justifyContent="end"
+          gap={{ xxs: 0, sm: 2 }}
+          width="100%"
+        >
+          {localContacts.map(({ title, icon: Icon, link }) => (
+            <Stack key={title} direction="row" alignItems="center" gap="1vmin">
+              <IconButton
+                sx={{
+                  color: '#fff',
+                  '&': { transition: 'color 300ms' },
+                  '&:hover': { color: '#8bc34a' },
+                }}
+                component="a"
+                target="_blank"
+                href={link}
+              >
+                <Icon size={isMd ? '1.5rem' : '1.25rem'} />
+              </IconButton>
+              <Typography
+                fontSize={{
+                  xxs: '12px',
+                  xs: '14px',
+                  md: '16px',
+                  lg: '18px',
+                }}
+              >
+                {title}
+              </Typography>
+            </Stack>
+          ))}
+          <Stack
+            component={Link}
+            to="/contacts"
+            direction="row"
+            alignItems="center"
+            gap="1vmin"
+          >
+            <IconButton
+              sx={{
+                color: '#fff',
+                '&': { transition: 'color 300ms' },
+                '&:hover': { color: '#8bc34a' },
+              }}
+            >
+              <TiContacts size={isMd ? '1.5rem' : '1.25rem'} />
+            </IconButton>
+            {!isSm && (
+              <Typography
+                fontSize={{
+                  xxs: '12px',
+                  xs: '14px',
+                  md: '16px',
+                  lg: '18px',
+                }}
+              >
+                Other contacts
+              </Typography>
+            )}
+          </Stack>
+        </Stack>
       </Stack>
     </Stack>
   );

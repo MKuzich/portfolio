@@ -1,12 +1,12 @@
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 const Projects = () => {
   return (
     <section>
       <Container>
-        <div>filter</div>
-        <h1>My projects</h1>
-        <ul></ul>
+        {/* <div>filter</div>
+        <h1>My projects</h1> */}
+        <Grid container spacing={4}></Grid>
       </Container>
     </section>
   );

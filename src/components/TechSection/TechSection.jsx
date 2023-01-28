@@ -42,7 +42,12 @@ export const TechSection = () => {
           }}
         />
       </Stack>
-      <Stack direction="row" gap={{ xxs: 1, sm: 2, lg: 4 }} flexWrap="wrap">
+      <Stack
+        direction="row"
+        gap={{ xxs: 1, sm: 2, lg: 4 }}
+        justifyContent="center"
+        flexWrap="wrap"
+      >
         {tech.map(({ title, icon: Icon }) => (
           <Tooltip key={title} title={title} placement="top">
             <Box

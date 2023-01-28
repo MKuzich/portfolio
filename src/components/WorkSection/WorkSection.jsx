@@ -62,7 +62,7 @@ export const WorkSection = () => {
           flexGrow: 1,
           display: 'flex',
           flexDirection: { xxs: 'column', lg: 'row' },
-          height: 300,
+          minHeight: 300,
         }}
       >
         <Tabs

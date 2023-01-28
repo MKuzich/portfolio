@@ -4,6 +4,7 @@ import { TechSection } from 'components/TechSection/TechSection';
 import { EducationSection } from 'components/EducationSection/EducationSection';
 import { WorkSection } from 'components/WorkSection/WorkSection';
 import { BackButton } from 'components/BackButton/BackButton';
+import { ResumeSection } from 'components/ResumeSection/ResumeSection';
 
 const About = () => {
   return (
@@ -33,6 +34,7 @@ const About = () => {
           <TechSection />
           <EducationSection />
           <WorkSection />
+          <ResumeSection />
         </Stack>
       </Container>
     </section>

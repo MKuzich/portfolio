@@ -1,45 +1,30 @@
-import { Stack, Typography, IconButton } from '@mui/material';
-import { webContacts, localContacts } from 'data/contacts';
+import { Grid, useMediaQuery, IconButton, Box, Tooltip } from '@mui/material';
+import { webContacts } from 'data/contacts';
 
 export const ContactsSection = () => {
+  const isMd = useMediaQuery('(min-width:900px)');
   return (
-    <Stack direction="column" p={1}>
-      <Stack>
-        {localContacts.map(({ title, icon: Icon, link }) => (
-          <Stack key={title} direction="row" alignItems="center">
-            <IconButton
-              sx={{
-                '&': { transition: 'color 300ms' },
-                '&:hover': { color: '#8bc34a' },
-              }}
-              component="a"
-              target="_blank"
-              href={link}
-            >
-              <Icon size="1.75rem" />
-            </IconButton>
-            <Typography sx={{ textTransform: 'none' }} ml={1}>
-              {title}
-            </Typography>
-          </Stack>
-        ))}
-      </Stack>
-      <Stack direction="row" gap={1}>
+    <Box width={{ xxs: 168, xs: 256, md: 656 }}>
+      <Grid container justifyContent="center" spacing={{ xxs: 1, md: 2 }}>
         {webContacts.map(({ title, icon: Icon, link }) => (
-          <IconButton
-            key={title}
-            sx={{
-              '&': { transition: 'color 300ms' },
-              '&:hover': { color: '#8bc34a' },
-            }}
-            component="a"
-            target="_blank"
-            href={link}
-          >
-            <Icon size="1.75rem" />
-          </IconButton>
+          <Grid item xxs={6} xs={4} md={2} key={title}>
+            <Tooltip title={title} placement="top">
+              <IconButton
+                sx={{
+                  color: '#fff',
+                  '&': { transition: 'color 300ms' },
+                  '&:hover': { color: '#8bc34a' },
+                }}
+                component="a"
+                target="_blank"
+                href={link}
+              >
+                <Icon size={isMd ? '5rem' : '4rem'} />
+              </IconButton>
+            </Tooltip>
+          </Grid>
         ))}
-      </Stack>
-    </Stack>
+      </Grid>
+    </Box>
   );
 };

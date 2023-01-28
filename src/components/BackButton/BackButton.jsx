@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 
 export const BackButton = () => {
   const isMd = useMediaQuery('(min-width:900px)');
+
   return (
     <IconButton
       sx={{
         position: 'fixed',
-        top: '5vmin',
-        right: '5vmin',
+        top: '4vh',
+        right: '4vw',
         color: '#fff',
         '&': { transition: 'color 300ms' },
         '&:hover': { color: '#8bc34a' },
@@ -17,7 +18,7 @@ export const BackButton = () => {
       component={Link}
       to="/"
     >
-      <HiHome size="4vmin" />
+      <HiHome size={isMd ? '2.25rem' : '1.75rem'} />
     </IconButton>
   );
 };
