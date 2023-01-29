@@ -1,18 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
-  components: {
-    MuiTabPanel: {
-      styleOverrides: {
-        root: {
-          '& .MuiBox-root': {
-            padding: '0px',
-            backgroundColor: 'red',
-          },
-        },
-      },
-    },
-  },
   breakpoints: {
     values: {
       xxs: 0,
@@ -97,6 +85,15 @@ export const theme = createTheme({
       fontWeight: 700,
       lineHeight: 1,
       color: '#fff',
+    },
+    titleDesription: {
+      fontFamily: 'Ubuntu',
+      fontWeight: 700,
+      textTransform: 'none',
+      fontSize: 'calc(0.75em + 0.75vmin)',
+      lineHeight: 1,
+      color: '#000',
+      marginBottom: 12,
     },
   },
 });

@@ -12,7 +12,6 @@ const Admin = () => {
         <Box
           sx={{
             flexGrow: 1,
-            bgcolor: 'background.paper',
             display: 'flex',
             height: 96,
           }}
@@ -26,6 +25,7 @@ const Admin = () => {
             sx={{
               borderRight: 1,
               borderColor: 'divider',
+              color: '#fff',
             }}
           >
             <Tab label="Add project" {...a11yProps(0)} />

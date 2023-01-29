@@ -38,8 +38,10 @@ export const AddProjectForm = () => {
   return (
     <Paper
       sx={{
+        ml: 4,
+        backgroundColor: 'primary.main',
         width: 792,
-        boxShadow: '7px 0px 35px -7px rgba(33,33,33,0.47)',
+        boxShadow: '7px 0px 35px -7px rgba(255,255,255,0.47)',
         px: 12,
         py: 7,
       }}

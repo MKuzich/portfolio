@@ -1,34 +1,22 @@
-import { Container, Grid, Button, Box } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { projects } from 'data/projects';
+import { ProjectPoster } from 'components/ProjectPoster/ProjectPoster';
 
 const Projects = () => {
-  const handleOpen = () => {};
-
   return (
     <section>
       <Container>
-        <Grid container spacing={4}>
-          {projects.map(({ name, poster }) => (
-            <Grid key={name} item xxs={4}>
-              <Button
-                onClick={handleOpen}
-                sx={{
-                  flexShrink: 0,
-                }}
-              >
-                <Box
-                  sx={{
-                    backgroundImage: `url(${poster})`,
-                    height: '300px',
-                    filter: 'grayscale(1)',
-                    '&': { transition: 'filter 500ms' },
-                    '&:hover': {
-                      filter: 'grayscale(0)',
-                    },
-                  }}
-                />
-              </Button>
-              ;
+        <Grid container spacing={3}>
+          {projects.map(({ id, name, poster, tech }, idx) => (
+            <Grid
+              key={name}
+              item
+              xxs={12}
+              sm={idx % 3 === 0 ? 12 : 6}
+              md={idx % 10 === 0 || idx % 10 === 0 ? 8 : 4}
+              sx={{ height: '300px' }}
+            >
+              <ProjectPoster poster={poster} name={name} id={id} tech={tech} />
             </Grid>
           ))}
         </Grid>

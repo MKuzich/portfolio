@@ -1,3 +1,4 @@
+import nftLanding from '../images/nft-landing/nft-landing-poster.png';
 import nftLanding1 from '../images/nft-landing/nft-landing1.png';
 import nftLanding2 from '../images/nft-landing/nft-landing2.png';
 import nftLanding3 from '../images/nft-landing/nft-landing3.png';
@@ -20,6 +21,7 @@ import nftLanding19 from '../images/nft-landing/nft-landing19.png';
 import nftLanding20 from '../images/nft-landing/nft-landing20.png';
 import nftLanding21 from '../images/nft-landing/nft-landing21.png';
 
+import petly from '../images/petly/petly-poster.png';
 import petly1 from '../images/petly/petly1.png';
 import petly2 from '../images/petly/petly2.png';
 import petly3 from '../images/petly/petly3.png';
@@ -64,6 +66,7 @@ import petly41 from '../images/petly/petly41.png';
 import petly42 from '../images/petly/petly42.png';
 import petly43 from '../images/petly/petly43.png';
 
+import todo from '../images/todo/todo-poster.png';
 import todo1 from '../images/todo/todo1.png';
 import todo2 from '../images/todo/todo2.png';
 import todo3 from '../images/todo/todo3.png';
@@ -79,6 +82,7 @@ import todo12 from '../images/todo/todo12.png';
 import todo13 from '../images/todo/todo13.png';
 import todo14 from '../images/todo/todo14.png';
 
+import phonebook from '../images/phonebook/phonebook-poster.png';
 import phonebook1 from '../images/phonebook/phonebook1.png';
 import phonebook2 from '../images/phonebook/phonebook2.png';
 import phonebook3 from '../images/phonebook/phonebook3.png';
@@ -91,6 +95,7 @@ import phonebook9 from '../images/phonebook/phonebook9.png';
 import phonebook10 from '../images/phonebook/phonebook10.png';
 import phonebook11 from '../images/phonebook/phonebook11.png';
 
+import filmoteka from '../images/filmoteka/filmoteka-poster.png';
 import filmoteka1 from '../images/filmoteka/filmoteka1.png';
 import filmoteka2 from '../images/filmoteka/filmoteka2.png';
 import filmoteka3 from '../images/filmoteka/filmoteka3.png';
@@ -102,6 +107,7 @@ import filmoteka8 from '../images/filmoteka/filmoteka8.png';
 import filmoteka9 from '../images/filmoteka/filmoteka9.png';
 import filmoteka10 from '../images/filmoteka/filmoteka10.png';
 
+import iceCream from '../images/ice-cream/ice-cream-poster.png';
 import iceCream1 from '../images/ice-cream/ice-cream1.png';
 import iceCream2 from '../images/ice-cream/ice-cream2.png';
 import iceCream3 from '../images/ice-cream/ice-cream3.png';
@@ -119,40 +125,7 @@ import iceCream14 from '../images/ice-cream/ice-cream14.png';
 
 export const projects = [
   {
-    name: 'NFT Landing',
-    description:
-      'Landing page for different products with dark and white theme.',
-    tech: ['JavaScript', 'Git', 'React.js', 'Next.js', 'Formik', 'TailwindCSS'],
-    poster: nftLanding1,
-    images: [
-      nftLanding1,
-      nftLanding2,
-      nftLanding3,
-      nftLanding4,
-      nftLanding5,
-      nftLanding6,
-      nftLanding7,
-      nftLanding8,
-      nftLanding9,
-      nftLanding10,
-      nftLanding11,
-      nftLanding12,
-      nftLanding13,
-      nftLanding14,
-      nftLanding15,
-      nftLanding16,
-      nftLanding17,
-      nftLanding18,
-      nftLanding19,
-      nftLanding20,
-      nftLanding21,
-    ],
-    frontLink: 'https://github.com/MKuzich/nft-landing',
-    backLink: null,
-    deployedLink: 'https://nft-landing-tau.vercel.app/',
-    creationDate: new Date('18-01-2023'),
-  },
-  {
+    id: 'petly',
     name: 'Petly',
     description:
       'Team project about animals. was created for the sale and purchase of animals. News and notices in one place with comfy interface.',
@@ -171,7 +144,7 @@ export const projects = [
       'JWT',
       'REST API',
     ],
-    poster: petly1,
+    poster: petly,
     images: [
       petly1,
       petly2,
@@ -223,6 +196,42 @@ export const projects = [
     creationDate: new Date('29-11-2022'),
   },
   {
+    id: 'nft-landing',
+    name: 'NFT Landing',
+    description:
+      'Landing page for different products with dark and white theme.',
+    tech: ['JavaScript', 'Git', 'React.js', 'Next.js', 'Formik', 'TailwindCSS'],
+    poster: nftLanding,
+    images: [
+      nftLanding1,
+      nftLanding2,
+      nftLanding3,
+      nftLanding4,
+      nftLanding5,
+      nftLanding6,
+      nftLanding7,
+      nftLanding8,
+      nftLanding9,
+      nftLanding10,
+      nftLanding11,
+      nftLanding12,
+      nftLanding13,
+      nftLanding14,
+      nftLanding15,
+      nftLanding16,
+      nftLanding17,
+      nftLanding18,
+      nftLanding19,
+      nftLanding20,
+      nftLanding21,
+    ],
+    frontLink: 'https://github.com/MKuzich/nft-landing',
+    backLink: null,
+    deployedLink: 'https://nft-landing-tau.vercel.app/',
+    creationDate: new Date('18-01-2023'),
+  },
+  {
+    id: 'todo',
     name: 'Todo List',
     description:
       'Personal project with back end and front end for creating personal or public remote todo list with filtration, searching by key-word, pagination and different designs for all types of screens.',
@@ -242,7 +251,7 @@ export const projects = [
       'Styled components',
       'Material UI',
     ],
-    poster: todo1,
+    poster: todo,
     images: [
       todo1,
       todo2,
@@ -265,6 +274,7 @@ export const projects = [
     creationDate: new Date('01-12-2022'),
   },
   {
+    id: 'phonebook',
     name: 'Phonebook',
     description:
       'Personal project was created to help authorized users create their own personal contact book and have access to it remotely.',
@@ -278,7 +288,7 @@ export const projects = [
       'REST API',
       'Bootstrap',
     ],
-    poster: phonebook1,
+    poster: phonebook,
     images: [
       phonebook1,
       phonebook2,
@@ -298,11 +308,12 @@ export const projects = [
     creationDate: new Date('12-09-2022'),
   },
   {
+    id: 'filmoteka',
     name: 'Filmoteka',
     description:
       'Team project is about searching movies and creating watch-list. Pure JavaScript with custom solutions was used. Role: Team Lead.',
     tech: ['HTML', 'CSS', 'SASS', 'JavaScript', 'Git', 'REST API', 'Parcel'],
-    poster: filmoteka1,
+    poster: filmoteka,
     images: [
       filmoteka1,
       filmoteka2,
@@ -321,11 +332,12 @@ export const projects = [
     creationDate: new Date('27-07-2022'),
   },
   {
+    id: 'ice-cream',
     name: 'Ice Cream',
     description:
       'Ice Cream company site with adaptive design and strong animated.',
     tech: ['HTML', 'CSS', 'SASS', 'JavaScript', 'Git'],
-    poster: iceCream1,
+    poster: iceCream,
     images: [
       iceCream1,
       iceCream2,
