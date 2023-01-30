@@ -8,6 +8,7 @@ export const BackButton = () => {
   return (
     <IconButton
       sx={{
+        zIndex: 2000,
         position: 'fixed',
         top: '4vh',
         right: '4vw',

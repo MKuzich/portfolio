@@ -66,6 +66,22 @@ import petly41 from '../images/petly/petly41.png';
 import petly42 from '../images/petly/petly42.png';
 import petly43 from '../images/petly/petly43.png';
 
+import news from '../images/space-news/space-news-poster.png';
+import news1 from '../images/space-news/space-news1.png';
+import news2 from '../images/space-news/space-news2.png';
+import news3 from '../images/space-news/space-news3.png';
+import news4 from '../images/space-news/space-news4.png';
+import news5 from '../images/space-news/space-news5.png';
+import news6 from '../images/space-news/space-news6.png';
+
+import snake from '../images/snake-game/snake-game-poster.png';
+import snake1 from '../images/snake-game/snake-game1.png';
+import snake2 from '../images/snake-game/snake-game2.png';
+import snake3 from '../images/snake-game/snake-game3.png';
+import snake4 from '../images/snake-game/snake-game4.png';
+import snake5 from '../images/snake-game/snake-game5.png';
+import snake6 from '../images/snake-game/snake-game6.png';
+
 import todo from '../images/todo/todo-poster.png';
 import todo1 from '../images/todo/todo1.png';
 import todo2 from '../images/todo/todo2.png';
@@ -122,6 +138,22 @@ import iceCream11 from '../images/ice-cream/ice-cream11.png';
 import iceCream12 from '../images/ice-cream/ice-cream12.png';
 import iceCream13 from '../images/ice-cream/ice-cream13.png';
 import iceCream14 from '../images/ice-cream/ice-cream14.png';
+
+import simpleApps from '../images/simple-apps/simple-apps-poster.png';
+import simpleApps1 from '../images/simple-apps/simple-apps1.png';
+import simpleApps2 from '../images/simple-apps/simple-apps2.png';
+import simpleApps3 from '../images/simple-apps/simple-apps3.png';
+import simpleApps4 from '../images/simple-apps/simple-apps4.png';
+import simpleApps5 from '../images/simple-apps/simple-apps5.png';
+import simpleApps6 from '../images/simple-apps/simple-apps6.png';
+import simpleApps7 from '../images/simple-apps/simple-apps7.png';
+import simpleApps8 from '../images/simple-apps/simple-apps8.png';
+
+import imageFinder from '../images/image-finder/image-finder-poster.png';
+import imageFinder1 from '../images/image-finder/image-finder1.png';
+import imageFinder2 from '../images/image-finder/image-finder2.png';
+import imageFinder3 from '../images/image-finder/image-finder3.png';
+import imageFinder4 from '../images/image-finder/image-finder4.png';
 
 export const projects = [
   {
@@ -196,39 +228,25 @@ export const projects = [
     creationDate: new Date('29-11-2022'),
   },
   {
-    id: 'nft-landing',
-    name: 'NFT Landing',
-    description:
-      'Landing page for different products with dark and white theme.',
-    tech: ['JavaScript', 'Git', 'React.js', 'Next.js', 'Formik', 'TailwindCSS'],
-    poster: nftLanding,
-    images: [
-      nftLanding1,
-      nftLanding2,
-      nftLanding3,
-      nftLanding4,
-      nftLanding5,
-      nftLanding6,
-      nftLanding7,
-      nftLanding8,
-      nftLanding9,
-      nftLanding10,
-      nftLanding11,
-      nftLanding12,
-      nftLanding13,
-      nftLanding14,
-      nftLanding15,
-      nftLanding16,
-      nftLanding17,
-      nftLanding18,
-      nftLanding19,
-      nftLanding20,
-      nftLanding21,
+    id: 'news',
+    name: 'Space news',
+    description: 'Space-news site with advanced filter and search.',
+    tech: [
+      'JavaScript',
+      'Git',
+      'React.js',
+      'TypeScript',
+      'Material UI',
+      'Redux',
+      'REST API',
+      'Styled components',
     ],
-    frontLink: 'https://github.com/MKuzich/nft-landing',
+    poster: news,
+    images: [news1, news2, news3, news4, news5, news6],
+    frontLink: 'https://github.com/MKuzich/news',
     backLink: null,
-    deployedLink: 'https://nft-landing-tau.vercel.app/',
-    creationDate: new Date('18-01-2023'),
+    deployedLink: 'https://mkuzich.github.io/news/',
+    creationDate: new Date('17-01-2023'),
   },
   {
     id: 'todo',
@@ -274,6 +292,65 @@ export const projects = [
     creationDate: new Date('01-12-2022'),
   },
   {
+    id: 'nft-landing',
+    name: 'NFT Landing',
+    description:
+      'Landing page for different products with dark and white theme.',
+    tech: ['JavaScript', 'Git', 'React.js', 'Next.js', 'Formik', 'TailwindCSS'],
+    poster: nftLanding,
+    images: [
+      nftLanding1,
+      nftLanding2,
+      nftLanding3,
+      nftLanding4,
+      nftLanding5,
+      nftLanding6,
+      nftLanding7,
+      nftLanding8,
+      nftLanding9,
+      nftLanding10,
+      nftLanding11,
+      nftLanding12,
+      nftLanding13,
+      nftLanding14,
+      nftLanding15,
+      nftLanding16,
+      nftLanding17,
+      nftLanding18,
+      nftLanding19,
+      nftLanding20,
+      nftLanding21,
+    ],
+    frontLink: 'https://github.com/MKuzich/nft-landing',
+    backLink: null,
+    deployedLink: 'https://nft-landing-tau.vercel.app/',
+    creationDate: new Date('18-01-2023'),
+  },
+  {
+    id: 'snake',
+    name: 'Snake game',
+    description:
+      'Snake game with back end for saving users results and front end for playing game.',
+    tech: [
+      'JavaScript',
+      'Git',
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Mongoose',
+      'axios',
+      'REST API',
+      'Styled components',
+    ],
+    poster: snake,
+    images: [snake1, snake2, snake3, snake4, snake5, snake6],
+    frontLink: 'https://github.com/MKuzich/snake-game',
+    backLink: 'https://github.com/MKuzich/snake-game-be',
+    deployedLink: 'https://mkuzich.github.io/snake-game/',
+    creationDate: new Date('07-12-2022'),
+  },
+  {
     id: 'phonebook',
     name: 'Phonebook',
     description:
@@ -312,7 +389,16 @@ export const projects = [
     name: 'Filmoteka',
     description:
       'Team project is about searching movies and creating watch-list. Pure JavaScript with custom solutions was used. Role: Team Lead.',
-    tech: ['HTML', 'CSS', 'SASS', 'JavaScript', 'Git', 'REST API', 'Parcel'],
+    tech: [
+      'HTML',
+      'CSS',
+      'SASS',
+      'JavaScript',
+      'Git',
+      'REST API',
+      'Parcel',
+      'Firebase',
+    ],
     poster: filmoteka,
     images: [
       filmoteka1,
@@ -330,6 +416,47 @@ export const projects = [
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/filmoteka/',
     creationDate: new Date('27-07-2022'),
+  },
+  {
+    id: 'simple-apps',
+    name: 'Simple apps',
+    description: 'Just few simple apps with different APIs.',
+    tech: [
+      'JavaScript',
+      'Git',
+      'Typescript',
+      'Styled components',
+      'REST API',
+      'Bootstrap',
+      'axios',
+    ],
+    poster: simpleApps,
+    images: [
+      simpleApps1,
+      simpleApps2,
+      simpleApps3,
+      simpleApps4,
+      simpleApps5,
+      simpleApps6,
+      simpleApps7,
+      simpleApps8,
+    ],
+    frontLink: 'https://github.com/MKuzich/react-practice',
+    backLink: null,
+    deployedLink: 'https://mkuzich.github.io/react-practice/',
+    creationDate: new Date('02-10-2022'),
+  },
+  {
+    id: 'image-finder',
+    name: 'Image finder',
+    description: 'Just public images library.',
+    tech: ['HTML', 'CSS', 'SASS', 'axios', 'Parcel', 'JavaScript', 'Git'],
+    poster: imageFinder,
+    images: [imageFinder1, imageFinder2, imageFinder3, imageFinder4],
+    frontLink: 'https://github.com/MKuzich/goit-js-hw-11',
+    backLink: null,
+    deployedLink: 'https://mkuzich.github.io/goit-js-hw-11/',
+    creationDate: new Date('28-06-2022'),
   },
   {
     id: 'ice-cream',
