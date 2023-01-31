@@ -424,7 +424,7 @@ export const projects = [
     tech: [
       'JavaScript',
       'Git',
-      'Typescript',
+      'TypeScript',
       'Styled components',
       'REST API',
       'Bootstrap',
