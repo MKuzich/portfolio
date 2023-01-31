@@ -44,7 +44,7 @@ const Projects = () => {
               xxs={12}
               sm={idx % 3 === 0 ? 12 : 6}
               md={idx % 10 === 0 || idx % 10 === 6 ? 8 : 4}
-              sx={{ height: '300px' }}
+              sx={{ height: '350px' }}
             >
               <ProjectPoster poster={poster} name={name} id={id} tech={tech} />
             </Grid>
