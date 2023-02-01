@@ -1,11 +1,14 @@
 import { Button, Box, Typography, Chip, Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const ProjectPoster = ({ poster, name, id, tech }) => {
+  const location = useLocation();
+
   return (
     <Button
       component={Link}
       to={`/projects/${id}`}
+      state={{ from: location }}
       sx={{
         position: 'relative',
         backgroundImage: `url(${poster})`,

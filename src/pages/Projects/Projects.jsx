@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Container, Grid } from '@mui/material';
 import { projects } from 'data/projects';
 import { ProjectPoster } from 'components/ProjectPoster/ProjectPoster';
@@ -6,12 +7,14 @@ import { BackButton } from 'components/BackButton/BackButton';
 import { FilterPanel } from 'components/FilterPanel/FilterPanel';
 
 const Projects = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filter = searchParams.get('filter') ?? '';
+
   const [selectedFilter, setSelectedFilter] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [identityToggler, setIdentityToggler] = useState(false);
 
   useEffect(() => {
-    console.log(identityToggler);
     if (selectedFilter.length === 0) {
       return setFilteredProjects(projects);
     }
@@ -25,6 +28,26 @@ const Projects = () => {
       })
     );
   }, [selectedFilter, identityToggler]);
+
+  useEffect(() => {
+    const filterParams = [...selectedFilter];
+    if (identityToggler) {
+      filterParams.push('true');
+    }
+    const stringParams = filterParams.join(',');
+    setSearchParams(stringParams);
+  }, [identityToggler, selectedFilter, setSearchParams]);
+
+  useEffect(() => {
+    const stringParams = searchParams.get('filter');
+    if (stringParams) {
+      const filterArray = stringParams.split(',');
+      if (filterArray.includes('true')) {
+        setIdentityToggler(true);
+      }
+      setSelectedFilter(filterArray.filter(i => i !== 'true'));
+    }
+  }, [searchParams]);
 
   return (
     <section>

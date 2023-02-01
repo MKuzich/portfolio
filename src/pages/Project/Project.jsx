@@ -19,8 +19,6 @@ const Project = () => {
           <Stack gap={7}>
             <Typography
               variant="homeLink"
-              // onMouseEnter={() => setSelectedLink(id)}
-              // onMouseLeave={() => setSelectedLink(0)}
               sx={{
                 fontSize: {
                   xxs: '20vmin',
