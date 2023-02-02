@@ -1,9 +1,5 @@
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
-import {
-  HiOutlinePhone,
-  HiOutlineMail,
-  HiOutlineLocationMarker,
-} from 'react-icons/hi';
+import { HiOutlinePhone, HiOutlineMail } from 'react-icons/hi';
 import { BsTelegram } from 'react-icons/bs';
 import { SiDiscord } from 'react-icons/si';
 
