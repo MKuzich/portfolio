@@ -49,7 +49,7 @@ export const FilterPanel = ({
       ))}
       <Stack direction="row" alignItems="center">
         <Switch
-          value={identityToggler}
+          defaultChecked={identityToggler}
           onChange={onTogglerClickHandler}
           sx={{
             '& .MuiSwitch-switchBase': {

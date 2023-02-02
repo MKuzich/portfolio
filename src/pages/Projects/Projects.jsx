@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Container, Grid } from '@mui/material';
 import { projects } from 'data/projects';
@@ -8,11 +8,26 @@ import { FilterPanel } from 'components/FilterPanel/FilterPanel';
 
 const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get('filter') ?? '';
+  const filter = useMemo(
+    () => searchParams.get('filter')?.split(',') ?? [],
+    [searchParams]
+  );
+  const toggler = useMemo(
+    () => (searchParams.get('exact') === 'true' ? true : false),
+    [searchParams]
+  );
+  const [selectedFilter, setSelectedFilter] = useState(filter);
 
-  const [selectedFilter, setSelectedFilter] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
-  const [identityToggler, setIdentityToggler] = useState(false);
+  const [identityToggler, setIdentityToggler] = useState(toggler);
+
+  useEffect(() => {
+    console.log(' filter: ', filter);
+
+    console.log(' selectedFilter: ', selectedFilter);
+
+    console.log('identityToggler,', identityToggler);
+  }, [filter, identityToggler, selectedFilter]);
 
   useEffect(() => {
     if (selectedFilter.length === 0) {
@@ -30,24 +45,9 @@ const Projects = () => {
   }, [selectedFilter, identityToggler]);
 
   useEffect(() => {
-    const filterParams = [...selectedFilter];
-    if (identityToggler) {
-      filterParams.push('true');
-    }
-    const stringParams = filterParams.join(',');
-    setSearchParams(stringParams);
+    const filterParams = selectedFilter.join(',');
+    setSearchParams({ filter: filterParams, exact: identityToggler });
   }, [identityToggler, selectedFilter, setSearchParams]);
-
-  useEffect(() => {
-    const stringParams = searchParams.get('filter');
-    if (stringParams) {
-      const filterArray = stringParams.split(',');
-      if (filterArray.includes('true')) {
-        setIdentityToggler(true);
-      }
-      setSelectedFilter(filterArray.filter(i => i !== 'true'));
-    }
-  }, [searchParams]);
 
   return (
     <section>
