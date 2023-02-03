@@ -9,7 +9,11 @@ import { FilterPanel } from 'components/FilterPanel/FilterPanel';
 const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const filter = useMemo(
-    () => searchParams.get('filter')?.split(',') ?? [],
+    () =>
+      searchParams
+        .get('filter')
+        ?.split(',')
+        .filter(i => i !== '') ?? [],
     [searchParams]
   );
   const toggler = useMemo(
@@ -20,14 +24,6 @@ const Projects = () => {
 
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [identityToggler, setIdentityToggler] = useState(toggler);
-
-  useEffect(() => {
-    console.log(' filter: ', filter);
-
-    console.log(' selectedFilter: ', selectedFilter);
-
-    console.log('identityToggler,', identityToggler);
-  }, [filter, identityToggler, selectedFilter]);
 
   useEffect(() => {
     if (selectedFilter.length === 0) {
