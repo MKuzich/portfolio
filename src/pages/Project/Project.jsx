@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {
-  Container,
-  Typography,
-  Stack,
-  Chip,
-  Grid,
-  Button,
-} from '@mui/material';
+import { Container, Typography, Stack, Chip, Button } from '@mui/material';
 import FsLightbox from 'fslightbox-react';
 import { format } from 'date-fns';
+import { BsImage } from 'react-icons/bs';
 
 import { projects } from 'data/projects';
 import { BackButton } from '../../components/BackButton/BackButton';
@@ -79,6 +73,7 @@ const Project = () => {
             </Stack>
             <Button
               onClick={() => setToggler(!toggler)}
+              startIcon={<BsImage />}
               sx={{
                 marginX: 'auto',
                 borderRadius: 2,
