@@ -1,4 +1,4 @@
-import { Typography, Stack, Button, useMediaQuery } from '@mui/material';
+import { Button, useMediaQuery } from '@mui/material';
 import { TbExternalLink } from 'react-icons/tb';
 
 export const ProjectLink = ({ link, text }) => {
