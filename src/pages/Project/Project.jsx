@@ -1,19 +1,37 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, Stack, Chip, Grid } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Stack,
+  Chip,
+  Grid,
+  Button,
+} from '@mui/material';
+import FsLightbox from 'fslightbox-react';
+import { format } from 'date-fns';
+
 import { projects } from 'data/projects';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { ProjectLink } from 'components/ProjectLink/ProjectLink';
-import { ClassNames } from '@emotion/react';
 
 const Project = () => {
   const { projectId } = useParams();
   const [project] = useState(
     projects.find(project => project.id === projectId)
   );
+  const [toggler, setToggler] = useState(false);
 
-  const { name, tech, description, frontLink, backLink, deployedLink, images } =
-    project;
+  const {
+    name,
+    tech,
+    description,
+    frontLink,
+    backLink,
+    deployedLink,
+    creationDate,
+    images,
+  } = project;
 
   return (
     <section>
@@ -45,6 +63,9 @@ const Project = () => {
               ))}
             </Stack>
             <Typography>{description}</Typography>
+            <Typography>
+              Created at {format(creationDate, 'dd MMM y')}
+            </Typography>
             <Stack>
               {frontLink && (
                 <ProjectLink link={frontLink} text="To front end repo" />
@@ -56,13 +77,21 @@ const Project = () => {
                 <ProjectLink link={deployedLink} text="To deployed project" />
               )}
             </Stack>
-            <Grid container spacing={2}>
-              {images.map((itm, idx) => (
-                <Grid sm={6} md={4} lg={3} item key={'img' + idx}>
-                  <img src={itm} alt={ClassNames} />
-                </Grid>
-              ))}
-            </Grid>
+            <Button
+              onClick={() => setToggler(!toggler)}
+              sx={{
+                marginX: 'auto',
+                borderRadius: 2,
+                px: 2,
+                color: '#fff',
+                backgroundColor: '#484848',
+                '&': { transition: 'background-color 300ms' },
+                '&:hover': { backgroundColor: '#8bc34a' },
+              }}
+            >
+              Screenshots
+            </Button>
+            <FsLightbox toggler={toggler} sources={images} />
           </Stack>
         )}
       </Container>

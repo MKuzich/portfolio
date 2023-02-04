@@ -225,7 +225,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/pet-support',
     backLink: 'https://github.com/MKuzich/pet-support-node-js',
     deployedLink: 'https://petly-netlify.netlify.app/',
-    creationDate: new Date('29-11-2022'),
+    creationDate: new Date(2022, 10, 19),
   },
   {
     id: 'news',
@@ -246,7 +246,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/news',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/news/',
-    creationDate: new Date('17-01-2023'),
+    creationDate: new Date(2023, 0, 17),
   },
   {
     id: 'todo',
@@ -289,7 +289,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/todo-fe',
     backLink: 'https://github.com/MKuzich/todo-be',
     deployedLink: 'https://mkuzich.github.io/todo-fe/',
-    creationDate: new Date('01-12-2022'),
+    creationDate: new Date(2022, 11, 1),
   },
   {
     id: 'nft-landing',
@@ -324,7 +324,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/nft-landing',
     backLink: null,
     deployedLink: 'https://nft-landing-tau.vercel.app/',
-    creationDate: new Date('18-01-2023'),
+    creationDate: new Date(2023, 0, 18),
   },
   {
     id: 'snake',
@@ -348,7 +348,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/snake-game',
     backLink: 'https://github.com/MKuzich/snake-game-be',
     deployedLink: 'https://mkuzich.github.io/snake-game/',
-    creationDate: new Date('07-12-2022'),
+    creationDate: new Date(2022, 11, 7),
   },
   {
     id: 'phonebook',
@@ -382,7 +382,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/phonebook',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/phonebook/',
-    creationDate: new Date('12-09-2022'),
+    creationDate: new Date(2022, 8, 12),
   },
   {
     id: 'filmoteka',
@@ -415,7 +415,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/filmoteka',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/filmoteka/',
-    creationDate: new Date('27-07-2022'),
+    creationDate: new Date(2022, 6, 27),
   },
   {
     id: 'simple-apps',
@@ -444,7 +444,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/react-practice',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/react-practice/',
-    creationDate: new Date('02-10-2022'),
+    creationDate: new Date(2022, 9, 2),
   },
   {
     id: 'image-finder',
@@ -456,7 +456,7 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/goit-js-hw-11',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/goit-js-hw-11/',
-    creationDate: new Date('28-06-2022'),
+    creationDate: new Date(2022, 5, 28),
   },
   {
     id: 'ice-cream',
@@ -484,6 +484,6 @@ export const projects = [
     frontLink: 'https://github.com/MKuzich/ice-cream',
     backLink: null,
     deployedLink: 'https://mkuzich.github.io/ice-cream/',
-    creationDate: new Date('21-05-2022'),
+    creationDate: new Date(2022, 4, 21),
   },
 ];
