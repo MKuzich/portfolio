@@ -115,7 +115,6 @@ export const EducationSection = () => {
               </Tooltip>
               <Stack display="inline-block" textAlign="center">
                 <Typography component="span">{speciality}</Typography>
-                {` `}
                 <IconButton
                   key={'btn' + speciality}
                   onClick={() => handleOpen(image, speciality)}
