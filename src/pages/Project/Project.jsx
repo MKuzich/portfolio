@@ -60,7 +60,7 @@ const Project = () => {
             <Typography>
               Created at {format(creationDate, 'dd MMM y')}
             </Typography>
-            <Stack>
+            <Stack direction="column" alignItems="start">
               {frontLink && (
                 <ProjectLink link={frontLink} text="To front end repo" />
               )}
@@ -70,22 +70,23 @@ const Project = () => {
               {deployedLink && (
                 <ProjectLink link={deployedLink} text="To deployed project" />
               )}
+              <Button
+                onClick={() => setToggler(!toggler)}
+                startIcon={<BsImage />}
+                sx={{
+                  mt: 4,
+                  borderRadius: 2,
+                  px: 2,
+                  color: '#fff',
+                  backgroundColor: '#484848',
+                  '&': { transition: 'background-color 300ms' },
+                  '&:hover': { backgroundColor: '#8bc34a' },
+                }}
+              >
+                Screenshots
+              </Button>
             </Stack>
-            <Button
-              onClick={() => setToggler(!toggler)}
-              startIcon={<BsImage />}
-              sx={{
-                marginX: 'auto',
-                borderRadius: 2,
-                px: 2,
-                color: '#fff',
-                backgroundColor: '#484848',
-                '&': { transition: 'background-color 300ms' },
-                '&:hover': { backgroundColor: '#8bc34a' },
-              }}
-            >
-              Screenshots
-            </Button>
+
             <FsLightbox toggler={toggler} sources={images} />
           </Stack>
         )}
