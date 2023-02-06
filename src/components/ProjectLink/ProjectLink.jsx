@@ -6,15 +6,17 @@ export const ProjectLink = ({ link, text }) => {
   return (
     <Button
       component="a"
+      variant="outlined"
       href={link}
       target="_blank"
       endIcon={<TbExternalLink size={isMd ? '1.25rem' : '1rem'} />}
+      color="secondary"
       sx={{
         flexShrink: 0,
-        color: '#fff',
         '&': { transition: 'color 300ms' },
         '&:hover': { color: '#8bc34a' },
-        verticalAlign: 'top',
+        verticalAlign: 'center',
+        alignItems: 'center',
       }}
     >
       {text}

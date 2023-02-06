@@ -58,29 +58,25 @@ const Project = () => {
             </Stack>
             <Typography>{description}</Typography>
             <Typography>
-              Created at {format(creationDate, 'dd MMM y')}
+              Created at {format(creationDate, 'dd MMMM y')}
             </Typography>
             <Stack direction="column" alignItems="start">
-              {frontLink && (
-                <ProjectLink link={frontLink} text="To front end repo" />
-              )}
-              {backLink && (
-                <ProjectLink link={backLink} text="To back end repo" />
-              )}
-              {deployedLink && (
-                <ProjectLink link={deployedLink} text="To deployed project" />
-              )}
+              <Stack direction="row" flexWrap="wrap" gap={2}>
+                {frontLink && <ProjectLink link={frontLink} text="Front End" />}
+                {backLink && <ProjectLink link={backLink} text="Back End" />}
+                {deployedLink && (
+                  <ProjectLink link={deployedLink} text="Deployed" />
+                )}
+              </Stack>
               <Button
                 onClick={() => setToggler(!toggler)}
                 startIcon={<BsImage />}
+                variant="contained"
+                color="secondary"
                 sx={{
                   mt: 4,
                   borderRadius: 2,
                   px: 2,
-                  color: '#fff',
-                  backgroundColor: '#484848',
-                  '&': { transition: 'background-color 300ms' },
-                  '&:hover': { backgroundColor: '#8bc34a' },
                 }}
               >
                 Screenshots
