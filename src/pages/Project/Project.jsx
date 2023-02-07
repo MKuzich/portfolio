@@ -58,7 +58,10 @@ const Project = () => {
             </Stack>
             <Typography>{description}</Typography>
             <Typography>
-              Created at {format(creationDate, 'dd MMMM y')}
+              Created at{' '}
+              <span style={{ color: '#8bc34a' }}>
+                {format(creationDate, 'dd MMMM y')}
+              </span>
             </Typography>
             <Stack direction="column" alignItems="start">
               <Stack direction="row" flexWrap="wrap" gap={2}>
