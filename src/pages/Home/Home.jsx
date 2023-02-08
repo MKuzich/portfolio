@@ -20,7 +20,7 @@ const Home = () => {
     >
       <Stack zIndex={10}>
         {links.map(({ id, link, primary, secondary, color }) => (
-          <Box key={id}>
+          <Box key={id} sx={{ animation: 'bounceIn', animationDuration: '1s' }}>
             <Typography
               component={Link}
               variant="homeLink"
