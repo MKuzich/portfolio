@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Typography, Stack, useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import portrait from '../../images/portrait.webp';
@@ -7,6 +7,7 @@ import { links } from 'data/links';
 
 const Home = () => {
   const [selectedLink, setSelectedLink] = useState(0);
+  const isMd = useMediaQuery('(min-width:900px)');
 
   return (
     <Box
@@ -42,6 +43,11 @@ const Home = () => {
           </Box>
         ))}
       </Stack>
+      {!isMd && (
+        <Stack position="absolute" bottom="10vh" zIndex={10}>
+          <Typography>Tap anywhere</Typography>
+        </Stack>
+      )}
       <Box
         width="100vmax"
         height="100vh"
