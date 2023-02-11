@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, Typography, Stack, useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { IoFingerPrintOutline } from 'react-icons/io5';
 
 import portrait from '../../images/portrait.webp';
 import { links } from 'data/links';
@@ -44,8 +45,21 @@ const Home = () => {
         ))}
       </Stack>
       {!isMd && (
-        <Stack position="absolute" bottom="10vh" zIndex={10}>
-          <Typography>Tap anywhere</Typography>
+        <Stack
+          position="absolute"
+          bottom="10vh"
+          zIndex={10}
+          left="50%"
+          color="secondary.light"
+          direction="row"
+          alignItems="center"
+          gap={1}
+          sx={{ transform: 'translateX(-50%)' }}
+        >
+          <Typography color="inherit" fontSize="calc(1em + 0.75vmin)">
+            Tap anywhere
+          </Typography>
+          <IoFingerPrintOutline />
         </Stack>
       )}
       <Box
