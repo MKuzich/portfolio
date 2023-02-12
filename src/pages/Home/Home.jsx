@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Typography, Stack, useMediaQuery } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { IoFingerPrintOutline } from 'react-icons/io5';
@@ -8,7 +8,22 @@ import { links } from 'data/links';
 
 const Home = () => {
   const [selectedLink, setSelectedLink] = useState(0);
+  const [clickedOnScr, setClickedOnScr] = useState(false);
   const isMd = useMediaQuery('(min-width:900px)');
+
+  useEffect(() => {
+    const changeTitles = e => {
+      if (e.target.nodeName !== 'A') {
+        setClickedOnScr(!clickedOnScr);
+      }
+    };
+
+    if (!isMd) {
+      document.addEventListener('click', changeTitles);
+    }
+
+    return () => document.removeEventListener('click', changeTitles);
+  }, [clickedOnScr, isMd]);
 
   return (
     <Box
@@ -39,7 +54,9 @@ const Home = () => {
                 color,
               }}
             >
-              {selectedLink === id ? secondary : primary}
+              {selectedLink === id || (!isMd && clickedOnScr)
+                ? secondary
+                : primary}
             </Typography>
           </Box>
         ))}
