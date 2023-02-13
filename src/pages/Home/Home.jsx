@@ -36,8 +36,15 @@ const Home = () => {
       overflow="hidden"
     >
       <Stack zIndex={10}>
-        {links.map(({ id, link, primary, secondary, color }) => (
-          <Box key={id} sx={{ animation: 'bounceIn', animationDuration: '1s' }}>
+        {links.map(({ id, link, primary, secondary, color }, idx) => (
+          <Box
+            key={id}
+            sx={{
+              animation: 'bounceIn',
+              animationDuration: '1s',
+              animationDelay: `${idx}s`,
+            }}
+          >
             <Typography
               component={Link}
               variant="homeLink"
@@ -52,6 +59,11 @@ const Home = () => {
                 },
                 '&:hover': { pl: 8 },
                 color,
+                opacity: 0,
+                animation: 'fadeIn',
+                animationDuration: '1s',
+                animationDelay: `${idx}s`,
+                animationFillMode: 'forwards',
               }}
             >
               {selectedLink === id || (!isMd && clickedOnScr)
@@ -62,22 +74,30 @@ const Home = () => {
         ))}
       </Stack>
       {!isMd && (
-        <Stack
+        <Box
           position="absolute"
           bottom="10vh"
           zIndex={10}
           left="50%"
-          color="secondary.light"
-          direction="row"
-          alignItems="center"
-          gap={1}
-          sx={{ transform: 'translateX(-50%)' }}
+          sx={{
+            transform: 'translateX(-50%)',
+          }}
         >
-          <Typography color="inherit" fontSize="calc(1em + 0.75vmin)">
-            Tap anywhere
-          </Typography>
-          <IoFingerPrintOutline />
-        </Stack>
+          <Stack
+            color="primary.main"
+            direction="row"
+            alignItems="center"
+            gap={1}
+            sx={{
+              animation: 'pulse 1s linear infinite',
+            }}
+          >
+            <Typography color="inherit" fontSize="calc(1em + 0.75vmin)">
+              Tap anywhere
+            </Typography>
+            <IoFingerPrintOutline />
+          </Stack>
+        </Box>
       )}
       <Box
         width="100vmax"
@@ -85,6 +105,8 @@ const Home = () => {
         position="absolute"
         left={{ xxs: '-15vw', xs: '5vw', sm: '15vw', md: '30vw', lg: '45vw' }}
         sx={{
+          animation: 'fadeIn',
+          animationDuration: '3s',
           backgroundImage: `url(${portrait})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
