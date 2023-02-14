@@ -1,4 +1,5 @@
 import { Container, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
 import { SummarySection } from 'components/SummarySection/SummarySection';
 import { TechSection } from 'components/TechSection/TechSection';
 import { EducationSection } from 'components/EducationSection/EducationSection';
@@ -30,11 +31,41 @@ const About = () => {
         }}
       >
         <Stack direction="column" gap={{ xxs: 8, sm: 12, lg: 20 }}>
-          <SummarySection />
-          <TechSection />
-          <EducationSection />
-          <WorkSection />
-          <ResumeSection />
+          <motion.div
+            initial={{ opacity: 0, x: 1000 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <SummarySection />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -1000 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <TechSection />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 1000 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <EducationSection />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -1000 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <WorkSection />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 1000 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <ResumeSection />
+          </motion.div>
         </Stack>
       </Container>
     </section>
