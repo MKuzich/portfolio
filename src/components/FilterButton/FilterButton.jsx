@@ -1,6 +1,11 @@
 import { Button } from '@mui/material';
 
-export const FilterButton = ({ text, selectedFilter, onTechBtnClick }) => {
+export const FilterButton = ({
+  text,
+  selectedFilter,
+  onTechBtnClick,
+  delay,
+}) => {
   return (
     <Button
       sx={{
@@ -10,6 +15,11 @@ export const FilterButton = ({ text, selectedFilter, onTechBtnClick }) => {
         backgroundColor: selectedFilter ? '#8bc34a' : '#484848',
         '&': { transition: 'background-color 300ms' },
         '&:hover': { backgroundColor: '#8bc34a' },
+        opacity: 0,
+        animation: 'fadeIn',
+        animationDuration: '500ms',
+        animationDelay: `${delay}ms`,
+        animationFillMode: 'forwards',
       }}
       onClick={() => onTechBtnClick(text)}
     >

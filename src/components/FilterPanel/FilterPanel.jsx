@@ -39,15 +39,26 @@ export const FilterPanel = ({
         text="All"
         onClick={onAllBtnClick}
       />
-      {projList.map(tech => (
+      {projList.map((tech, idx) => (
         <FilterButton
           key={'filter' + tech}
           selectedFilter={selectedFilter.some(i => i === tech)}
           text={tech}
           onTechBtnClick={onTechBtnClick}
+          delay={idx * 80}
         />
       ))}
-      <Stack direction="row" alignItems="center">
+      <Stack
+        direction="row"
+        alignItems="center"
+        sx={{
+          animation: 'fadeIn',
+          animationDelay: `${projList.length * 80}ms`,
+          opacity: 0,
+          animationDuration: '500ms',
+          animationFillMode: 'forwards',
+        }}
+      >
         <Switch
           defaultChecked={identityToggler}
           onChange={onTogglerClickHandler}
