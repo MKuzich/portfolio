@@ -28,12 +28,7 @@ export const EducationSection = () => {
     <Stack direction="column" alignItems="start" gap={3}>
       <Stack direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
         <Stack direction="row" alignItems="center" gap={{ xxs: 1, lg: 2 }}>
-          <Stack
-            direction="row"
-            alignItems="end"
-            gap={1}
-            sx={{ animation: 'headShake 2s linear infinite' }}
-          >
+          <Stack direction="row" alignItems="end" gap={1}>
             <Typography
               fontSize={{
                 xxs: '20px',

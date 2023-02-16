@@ -7,13 +7,7 @@ export const TechSection = () => {
   return (
     <Stack ml={{ md: '20%' }} direction="column" gap={{ xxs: 2, md: 4, lg: 6 }}>
       <Stack direction="row" alignItems="center" gap={{ xxs: 1, lg: 2 }}>
-        <Stack
-          flexShrink={0}
-          direction="row"
-          alignItems="end"
-          gap={1}
-          sx={{ animation: 'headShake 2s linear infinite' }}
-        >
+        <Stack flexShrink={0} direction="row" alignItems="end" gap={1}>
           <Typography
             fontSize={{
               xxs: '20px',
