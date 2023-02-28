@@ -39,7 +39,7 @@ const About = () => {
             <SummarySection />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -1000 }}
+            initial={{ opacity: 0, x: 1000 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
@@ -53,7 +53,7 @@ const About = () => {
             <EducationSection />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -1000 }}
+            initial={{ opacity: 0, x: 1000 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >

@@ -37,8 +37,8 @@ const Project = () => {
               variant="homeLink"
               sx={{
                 fontSize: {
-                  xxs: '20vmin',
-                  xs: '15vmin',
+                  xxs: '13vmin',
+                  xs: '14vmin',
                   lg: '18vmin',
                 },
                 color: '#fff',

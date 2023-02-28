@@ -27,6 +27,7 @@ export const ResumeSection = () => {
             05.
           </Typography>
           <Typography
+            flexShrink={0}
             fontSize={{
               xxs: '14px',
               xs: '16px',
