@@ -97,9 +97,3 @@ export const theme = createTheme({
     },
   },
 });
-
-// font-family: 'Ubuntu', sans-serif;400 700
-
-// font-family: 'Open Sans', sans-serif; 400 700 900
-// font-family: 'Raleway', sans-serif;
-// font-family: 'Roboto', sans-serif;
