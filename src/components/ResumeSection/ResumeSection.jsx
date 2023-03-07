@@ -65,7 +65,7 @@ export const ResumeSection = () => {
             }}
             component="a"
             target="_blank"
-            href="https://drive.google.com/file/d/15kxgTrC-Tz-EesL5hbF3saJhHNnIXzM3/view?usp=sharing"
+            href="https://drive.google.com/file/d/1aKc04p9dyInRRnjdGMgzfCaktDIzkyxh/view?usp=share_link"
           >
             <VscDesktopDownload size={isMd ? '5rem' : '4rem'} />
           </IconButton>
