@@ -55,10 +55,4 @@ export const localContacts = [
     icon: HiOutlineMail,
     link: 'mailto:mykhailokuzich@gmail.com',
   },
-  // {
-  //   name: 'Location',
-  //   title: 'Poltava, Ukraine',
-  //   icon: HiOutlineLocationMarker,
-  //   link: 'https://www.google.com/maps/place/%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D0%B0,+%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+36000/@49.6021346,34.4871991,12z/data=!3m1!4b1!4m5!3m4!1s0x40d825e425e6ba6b:0xcf3e6bdfb9e4ca82!8m2!3d49.588267!4d34.5514169',
-  // },
 ];
