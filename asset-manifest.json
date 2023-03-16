@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.ba097270.css",
-    "main.js": "/portfolio/static/js/main.1ececf57.js",
+    "main.js": "/portfolio/static/js/main.118b7638.js",
     "static/js/860.588f46e8.chunk.js": "/portfolio/static/js/860.588f46e8.chunk.js",
-    "static/js/122.986a8489.chunk.js": "/portfolio/static/js/122.986a8489.chunk.js",
+    "static/js/122.7c6489ec.chunk.js": "/portfolio/static/js/122.7c6489ec.chunk.js",
     "static/js/225.a05cc556.chunk.js": "/portfolio/static/js/225.a05cc556.chunk.js",
     "static/js/222.525d179f.chunk.js": "/portfolio/static/js/222.525d179f.chunk.js",
     "static/js/853.30e5bcf7.chunk.js": "/portfolio/static/js/853.30e5bcf7.chunk.js",
@@ -92,7 +92,6 @@
     "static/media/filmoteka4.png": "/portfolio/static/media/filmoteka4.e684ad5fd8e340c80d55.png",
     "static/media/petly18.png": "/portfolio/static/media/petly18.d4167abf82ad50a5f628.png",
     "static/media/ice-cream5.png": "/portfolio/static/media/ice-cream5.04f938b22f3de825aa99.png",
-    "static/media/goit-certificate.png": "/portfolio/static/media/goit-certificate.8ea2844da60489787ab1.png",
     "static/media/nft-landing9.png": "/portfolio/static/media/nft-landing9.81d0c60afb42e7332e02.png",
     "static/media/petly16.png": "/portfolio/static/media/petly16.cb7a79a5e909068edd09.png",
     "static/media/petly36.png": "/portfolio/static/media/petly36.5f487d6b14251a8294e4.png",
@@ -112,6 +111,7 @@
     "static/media/ice-cream3.png": "/portfolio/static/media/ice-cream3.26453e36427ccc5ecbd2.png",
     "static/media/nft-landing19.png": "/portfolio/static/media/nft-landing19.0996322fbb90dec8970b.png",
     "static/media/petly20.png": "/portfolio/static/media/petly20.bf9cec6d705df56cf153.png",
+    "static/media/goit-certificate.png": "/portfolio/static/media/goit-certificate.07bebc88e62912cbf57f.png",
     "static/media/space-news5.png": "/portfolio/static/media/space-news5.9fa57c1095dc854354b9.png",
     "static/media/petly37.png": "/portfolio/static/media/petly37.42eaa9497c84966a6125.png",
     "static/media/ice-cream13.png": "/portfolio/static/media/ice-cream13.7a681c95a95de71cbca6.png",
@@ -175,9 +175,9 @@
     "static/media/todo2.png": "/portfolio/static/media/todo2.0fa756a4eddd023898fe.png",
     "index.html": "/portfolio/index.html",
     "main.ba097270.css.map": "/portfolio/static/css/main.ba097270.css.map",
-    "main.1ececf57.js.map": "/portfolio/static/js/main.1ececf57.js.map",
+    "main.118b7638.js.map": "/portfolio/static/js/main.118b7638.js.map",
     "860.588f46e8.chunk.js.map": "/portfolio/static/js/860.588f46e8.chunk.js.map",
-    "122.986a8489.chunk.js.map": "/portfolio/static/js/122.986a8489.chunk.js.map",
+    "122.7c6489ec.chunk.js.map": "/portfolio/static/js/122.7c6489ec.chunk.js.map",
     "225.a05cc556.chunk.js.map": "/portfolio/static/js/225.a05cc556.chunk.js.map",
     "222.525d179f.chunk.js.map": "/portfolio/static/js/222.525d179f.chunk.js.map",
     "853.30e5bcf7.chunk.js.map": "/portfolio/static/js/853.30e5bcf7.chunk.js.map",
@@ -202,6 +202,6 @@
   },
   "entrypoints": [
     "static/css/main.ba097270.css",
-    "static/js/main.1ececf57.js"
+    "static/js/main.118b7638.js"
   ]
 }
